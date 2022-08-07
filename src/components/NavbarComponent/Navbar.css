@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 35px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    padding: 10px 0;
+}
+
+.nav-list {
+    list-style-type: none;
+}
+
+.nav-list .list-item {
+    display: inline-block;
+    padding: 20px 10px;
+}
+
+.nav-list .list-item:hover{
+    transform: rotate(-5deg) scale(1.05);
+    transition: 0.5s;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-logo {
+    border-radius: 50%;
+    height: 120px;
+    width: auto;
+}
+
+.menu {
+    padding: 2px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-line {
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    margin-bottom: 6px;
+    border-radius: 5px;
+}
+
+.menu:active #menu-line-1 {
+    animation-name: hamburger-animation-1;
+}
+
+.menu:active #menu-line-3 {
+    animation-name: hamburger-animation-3;
+}
+
+.menu:active #menu-line-1,
+.menu:active #menu-line-3 {
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+}
+
+@keyframes hamburger-animation-1 {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes hamburger-animation-3 {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-6px);
+    }
+}
+
+
+@media all and (max-width: 720px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .navbar-logo {
+        height: 80px;
+    }
+    
+    .menu {
+        display:block;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+    }
+    
+    .nav-list .list-item {
+        display: block;
+    }
+
+    .nav-list .list-item:hover {
+        transform: none;
+        background-color: #cfcfcf;
+    }
+    
+    .nav-list {
+        width: 100%;
+        text-align: right;
+        margin-top: 30px;
+        padding: 10px;
+        transition: 0.5s;
+        animation-name: navbar-slide-in;
+        animation-duration: .5s;
+        animation-iteration-count: 1;
+    }
+    @keyframes navbar-slide-in {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        30%{
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);opacity:1;
+        }
+    }
+
+    .nav-logo-parent {
+        width: 100%;
+        padding-left: 30px;
+    }
+
+    .nav-list-hidden {
+        display: none;
+    }
+}
