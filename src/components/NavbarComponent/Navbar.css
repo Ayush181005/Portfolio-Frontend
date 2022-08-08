@@ -18,9 +18,13 @@
     padding: 20px 10px;
 }
 
-.nav-list .list-item:hover{
-    transform: rotate(-5deg) scale(1.05);
-    transition: 0.5s;
+.nav-list .list-item.right:hover{
+    transform: rotate(-2deg) scale(1.05) translate(-4px, -7px);
+    transition: 0.1s;
+}
+.nav-list .list-item.left:hover{
+    transform: rotate(2deg) scale(1.05) translate(4px, -7px);
+    transition: 0.1s;
 }
 
 .navbar a {
