@@ -13,7 +13,7 @@ export const Navbar = () => {
       <nav className='navbar'>
         <div className="nav-logo-parent">
           <Link to="/">
-            <img src={logo} alt="Logo (My Photo)" className='navbar-logo'/>
+            <img src={logo} alt="Logo" className='navbar-logo'/>
           </Link>
         </div>
         <ul className='nav-list nav-list-hidden' id="nav-list">
