@@ -53,6 +53,7 @@
 
 .container .contactInfo .box .text small, p {
     margin-left: 10px;
+    word-wrap: break-word;
 }
 
 .container .contactInfo .box .text small {

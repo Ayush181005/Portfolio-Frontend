@@ -19,7 +19,7 @@ export const ContactUs = () => {
           <div className="box">
             <div className="text">
               <small>Address</small>
-              <p>Lorem ipsum dolor sit amet.</p>
+              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
             </div>
           </div>
           <div className="box">
