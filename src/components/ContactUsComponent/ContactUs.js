@@ -20,7 +20,7 @@ export const ContactUs = () => {
         <div className="contactInfo">
           <div className="content">
             <h1>Contact Me</h1>
-            <p className='contactme-text'>Not much to write here 😅 as most of the things are in the <Link to='/about'>About Me</Link> page. Feel free to <span onClick={contactFormFocus} class="focusFormBtn">contact me</span>!</p>
+            <p className='contactme-text'>Not much to write here 😅 as most of the things are in the <Link to='/about' className='about-link'>About Me</Link> page. Feel free to <span onClick={contactFormFocus} class="focusFormBtn">contact me</span>!</p>
           </div>
           <div className="box">
             <div className="text">

@@ -31,6 +31,16 @@
     font-size: .8em;
 }
 
+.developer a {
+    text-decoration: none;
+    color: #333;
+}
+
+.developer a:hover {
+    text-decoration: underline;
+    color: #222;
+}
+
 .footer-icon {
     margin: 0 8px;
     text-decoration: none;
