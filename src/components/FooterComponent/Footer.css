@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+
+.footer-body {
+    padding: 30px 0;
+    border-top: 2px solid #eee;
+    margin-top: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.footer-body .row {
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+}
+
+.row .row-left{
+    width: 30%;
+}
+.row .row-right {
+    width: 70%;
+    text-align: end;
+}
+
+.row .row-left,
+.row .row-right {
+    padding: 10px 100px;
+}
+
+.developer {
+    margin: 0 120px;
+    font-size: .8em;
+}
+
+.footer-icon {
+    margin: 0 8px;
+    text-decoration: none;
+}
+
+.footer-icon-github {
+    color: #211F1F;
+}
+
+.footer-icon-stackoverflow {
+    color: #EF8236;
+}
+
+.footer-icon-youtube {
+    color: #FF0000;
+}
+
+.footer-icon .text {
+    color: #333;
+}
+
+.footer-icon .text:hover {
+    text-decoration: underline;
+    color: #222;
+}
+
+@media all and (max-width:849px){
+    .footer-body {
+        margin-top: 0;
+    }
+
+    .footer-body .row {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer-body .row .row-left,
+    .footer-body .row .row-right {
+        display: block;
+        margin: auto;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .developer {
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 431px) {
+    .footer-body {
+        font-size: .7em;
+    }
+}
+
+@media all and (max-width: 338px) {
+    .footer-body {
+        font-size: .6em;
+    }
+}

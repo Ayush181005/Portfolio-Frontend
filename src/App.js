@@ -1,5 +1,6 @@
 import { Navbar } from './components/NavbarComponent/Navbar';
 import { ContactUs } from './components/ContactUsComponent/ContactUs';
+import { Footer } from './components/FooterComponent/Footer';
 import {
   BrowserRouter as Router,
   Routes,
@@ -18,9 +19,13 @@ function App() {
     <Router>
       <Navbar />
 
-      <Routes>
-        <Route exact path="/contact" element={<ContactUs />}/>
-      </Routes>
+      <main>
+        <Routes>
+          <Route exact path="/contact" element={<ContactUs />}/>
+        </Routes>
+      </main>
+
+      <Footer />
     </Router>
   );
 }
