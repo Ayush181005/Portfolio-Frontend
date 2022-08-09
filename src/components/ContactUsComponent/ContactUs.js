@@ -1,5 +1,6 @@
 import React from 'react'
 import './ContactUs.css'
+import { Link } from 'react-router-dom'
 
 export const ContactUs = () => {
   /**
@@ -8,30 +9,29 @@ export const ContactUs = () => {
    * make backend
    * google recaptcha integration
    */
+
+  const contactFormFocus = () => {
+    document.querySelector('form input').focus();
+  }
+
   return (
     <section className="contact">
       <div className="container">
         <div className="contactInfo">
           <div className="content">
             <h1>Contact Me</h1>
-            <p className='contactme-text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, corporis explicabo obcaecati neque, earum quisquam beatae dolore necessitatibus voluptate cumque tempore eius architecto, amet reiciendis! Provident incidunt eaque adipisci voluptate?</p>
-          </div>
-          <div className="box">
-            <div className="text">
-              <small>Address</small>
-              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-            </div>
+            <p className='contactme-text'>Not much to write here 😅 as most of the things are in the <Link to='/about'>About Me</Link> page. Feel free to <span onClick={contactFormFocus} class="focusFormBtn">contact me</span>!</p>
           </div>
           <div className="box">
             <div className="text">
               <small>Phone</small>
-              <p>Lorem.</p>
+              <p><a href="tel:+919426140218" className='contact-form-info-link'>+919426140218</a></p>
             </div>
           </div>
           <div className="box">
             <div className="text">
               <small>Email</small>
-              <p>Lorem.</p>
+              <p><a href="mailto:ayush.s181005@gmail.com" className='contact-form-info-link'>ayush.s181005@gmail.com</a></p>
             </div>
           </div>
         </div>
