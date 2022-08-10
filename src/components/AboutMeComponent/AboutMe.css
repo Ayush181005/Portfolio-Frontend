@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.about-section {
+    padding: 50px 100px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.about-section h1 {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.aboutme-image {
+    float: left;
+    margin: 0px 100px 0 0;
+    object-fit: cover;
+    width: 300px;
+}
+
+.about-section p {
+    margin: 20px 0;
+}
+
+.about-section a {
+    color: #333;
+    text-decoration: none;
+}
+
+.about-section a:hover {
+    color: #222;
+    text-decoration: underline;
+}
+
+.icon-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.aboutme-icon {
+    font-size: 50px;
+    margin: 0px 20px;
+}
+
+.aboutme-icon:hover {
+    transform: scale(1.1);
+}
+
+.aboutme-icon-github {
+    color: #211F1F;
+}
+
+.aboutme-icon-stackoverflow {
+    color: #EF8236;
+}
+
+.aboutme-icon-freecodecamp {
+    color: #0a0a22;
+}
+
+@media all and (max-width: 940px) {
+    .aboutme-image {
+        width: 200px;
+        margin: 0 50px 0 0;
+    }
+}
+
+@media all and (max-width: 710px) {
+    .about-section {
+        padding: 50px;
+    }
+    .aboutme-image {
+        width: 150px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .aboutme-image {
+        width: 100px;
+    }
+}
+
+@media all and (max-width: 370px) {
+    .about-section {
+        padding: 30px;
+        text-align: center;
+    }
+    .about-section h1 {
+        font-size: 40px;
+    }
+
+    .aboutme-image {
+        width: 100%;
+        margin: 0 0 50px 0;
+    }
+
+    .aboutme-icon {
+        font-size: 30px;
+        margin: 0px 10px;
+    }
+}
