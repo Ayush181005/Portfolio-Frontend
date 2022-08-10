@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-.contact {
+.contact-section {
     position: relative;
     padding: 10px 100px;
     display: flex;
@@ -10,17 +10,16 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.contact .content {
+.contact-section .content {
     max-width: 800px;
     text-align: center;
 }
 
-.contact .content h1 {
-    font-size: 36px;
-    font-weight: 500;
+.contact-section .content h1 {
+    font-size: 50px;
 }
 
-.contact .content p {
+.contact-section .content p {
     font-weight: 300;
 }
 
@@ -129,7 +128,7 @@
 }
 
 @media all and (max-width:991px) {
-    .contact {
+    .contact-section {
         padding: 50px 50px;
     }
 
@@ -154,5 +153,9 @@
     .container .contactInfo .box .text small {
         width: 25%;
         font-weight: 300;
+    }
+
+    .contact-section .content h1 {
+        font-size: 40px;
     }
 }
