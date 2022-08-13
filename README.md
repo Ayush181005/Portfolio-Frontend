@@ -5,8 +5,8 @@
 * [Technologies](#technologies)
 
 ## General info
-This is the frontend part of my personal portfolio website made with ReactJS.
-\Created without any external CSS library 😉!!!
+This is the frontend part of my personal portfolio website made with ReactJS.\
+Created without any external CSS library 😉!!!
 	
 ## Technologies
 Project is created with:
