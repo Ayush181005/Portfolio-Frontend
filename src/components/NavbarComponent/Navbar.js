@@ -18,10 +18,9 @@ export const Navbar = () => {
         </div>
         <ul className='nav-list nav-list-hidden' id="nav-list">
             <li className='list-item left'><Link className='navbar-text' to="/">Home</Link></li>
-            <li className='list-item right'><Link className='navbar-text' to="#">Projects</Link></li>
             <li className='list-item right'><Link className='navbar-text' to="/about">About Me</Link></li>
             <li className='list-item right'><Link className='navbar-text' to="/contact">Contact Me</Link></li>
-            <li className='list-item right'><Link className='navbar-text' to="#">Certificates</Link></li>                
+            <li className='list-item right'><Link className='navbar-text' to="/certificate">Certificates</Link></li>                
         </ul>
         <div className="menu" id="toggle-button" onClick={navListToggle}>
           <div className="menu-line" id="menu-line-1"></div>
