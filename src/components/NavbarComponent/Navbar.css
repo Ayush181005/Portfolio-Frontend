@@ -29,7 +29,15 @@
 
 .navbar a {
     text-decoration: none;
-    color: black;
+}
+
+.navbar-text {
+    color: #490000;
+}
+
+.navbar-text.active {
+    color: #000;
+    text-shadow: #919191 0 0 10px;
 }
 
 .navbar-logo {

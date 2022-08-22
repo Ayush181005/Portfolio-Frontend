@@ -1,13 +1,15 @@
 import React from 'react'
 import logo from '../../images/logo.jpg'
 import './Navbar.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export const Navbar = () => {
+  let location = useLocation();
 
   const navListToggle = () => {
     document.getElementById('nav-list').classList.toggle('nav-list-hidden');
   }
+
   return (
     <header>
       <nav className='navbar'>
@@ -17,10 +19,10 @@ export const Navbar = () => {
           </Link>
         </div>
         <ul className='nav-list nav-list-hidden' id="nav-list">
-            <li className='list-item left'><Link className='navbar-text' to="/">Home</Link></li>
-            <li className='list-item right'><Link className='navbar-text' to="/about">About Me</Link></li>
-            <li className='list-item right'><Link className='navbar-text' to="/contact">Contact Me</Link></li>
-            <li className='list-item right'><Link className='navbar-text' to="/certificate">Certificates</Link></li>                
+            <li className='list-item left'><Link className={`navbar-text ${location.pathname==='/'?'active':''}`} to="/">Home</Link></li>
+            <li className='list-item right'><Link className={`navbar-text ${location.pathname==='/about'?'active':''}`} to="/about">About Me</Link></li>
+            <li className='list-item right'><Link className={`navbar-text ${location.pathname==='/contact'?'active':''}`} to="/contact">Contact Me</Link></li>
+            <li className='list-item right'><Link className={`navbar-text ${location.pathname==='/certificate'?'active':''}`} to="/certificate">Certificates</Link></li>                
         </ul>
         <div className="menu" id="toggle-button" onClick={navListToggle}>
           <div className="menu-line" id="menu-line-1"></div>
