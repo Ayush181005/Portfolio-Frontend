@@ -5,6 +5,12 @@
     position: relative;
     transition: .5s;
     margin-right: 30px;
+    margin-top: 30px;
+    cursor: default;
+}
+
+a .portfolio-card {
+    cursor: pointer;
 }
 
 .portfolio-card img {
