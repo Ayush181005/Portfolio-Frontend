@@ -9,7 +9,7 @@ export const AboutMe = () => {
     <section className='about-section'>
         <h1>About Me!</h1>
         <p>
-            <img src={aboutmeImg} alt="My photo" className='aboutme-image' />
+            <img src={aboutmeImg} alt="Me" className='aboutme-image' />
             Hi! I'm <b>Ayush</b>, studying in grade 12 and I am {/*new Date().getFullYear() - 2005*/}16 years old. I am from Ahmedabad, Gujarat in India. I study in Anand Niketan School, Shilaj Campus. Currently, I am preapering for my JEE and other entrance exams which are for the universities and colleges in India. I am currently working on my portfolio website (this website) made on MERN stack. I am interested in programming, learning about new technologies and I have learnt a few programming languages also, I am also interested in Lawn Tennis, badminton, table tennis, and other outdoor games. And I love Art, this website is not only for programming stuff but also for all other activities I do. I also go to coaching classes for my preparation of JEE. I had left my coaching classes in 11th class because of too much load and I wanted to focus not only in studies but also the extracurricular activities, but then I joined it again to study hard. I also have interest in robotics (arduinos) and I also use raspberry pi for my projects. Currently, I do all these only as a hobby. I am most interested in Science and mainly physics is my favourite subject, not only as in the syllabus but also practically.
         </p>
         <p>
