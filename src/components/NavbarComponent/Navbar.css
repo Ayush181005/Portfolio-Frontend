@@ -18,21 +18,25 @@
     padding: 20px 10px;
 }
 
-.nav-list .list-item.right:hover{
-    transform: rotate(-2deg) scale(1.05) translate(-4px, -7px);
-    transition: 0.1s;
-}
-.nav-list .list-item.left:hover{
-    transform: rotate(2deg) scale(1.05) translate(4px, -7px);
-    transition: 0.1s;
-}
-
 .navbar a {
     text-decoration: none;
 }
 
+.navbar-text.right:hover {
+    transform: rotate(-2deg) scale(1.05) translate(-4px, -7px);
+    transition: 0.1s;
+}
+.navbar-text.left:hover {
+    transform: rotate(2deg) scale(1.05) translate(4px, -7px);
+    transition: 0.1s;
+}
+
+.navbar-text.active:hover {
+    transform: none;
+}
+
 .navbar-text {
-    color: #490000;
+    color: #490000;display:inline-block;
 }
 
 .navbar-text.active {
