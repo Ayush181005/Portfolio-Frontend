@@ -4,7 +4,8 @@ import { AboutMe } from './components/AboutMeComponent/AboutMe';
 import { Footer } from './components/FooterComponent/Footer';
 import { Portfolio } from './components/PortfolioComponent/Portfolio';
 import { Certificate } from './components/CertificateComponent/Certificate';
-import { PortfolioDetail } from './components/PortfolioDetailComponent/PortfolioDetail'
+import { PortfolioDetail } from './components/PortfolioDetailComponent/PortfolioDetail';
+import { Signin } from './components/SigninComponent/Signin';
 import {
   BrowserRouter as Router,
   Routes,
@@ -32,6 +33,7 @@ function App() {
             <Route exact path="/about" element={<AboutMe />}/>
             <Route exact path="/certificate" element={<Certificate />}/>
             <Route exact path="/portfolio/:slug" element={<PortfolioDetail />} />
+            <Route exact path="/signin" element={<Signin />} />
           </Routes>
         </main>
 
