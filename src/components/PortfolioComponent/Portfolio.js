@@ -11,7 +11,6 @@ export const Portfolio = () => {
 
   return (
     <section className="portfolio-section">
-      {console.log(portfolios)}
       <div className="portfolio-container">
           <h1>Portfolio</h1>
           {portfolios.map((portfolio, i) => {
