@@ -9,6 +9,8 @@ export const PortfolioDetail = () => {
     useEffect(() => {getPortfolioFromSlug(slug)}, []); // calls only once
 
     return (
-        <div>Title: {portfolio.title}</div>
+        <section className='portfolioDetailSection'>
+            {portfolio.title}
+        </section>
     )
 }
