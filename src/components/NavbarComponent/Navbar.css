@@ -11,11 +11,27 @@
 
 .nav-list {
     list-style-type: none;
+    display: flex;
+    align-items: center;
 }
 
 .nav-list .list-item {
     display: inline-block;
     padding: 20px 10px;
+}
+
+.navbar-btn {
+    background-color: #ddd;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    border-radius: 2px;
+}
+
+.navbar-btn:hover {
+    background-color: #333;
+    color: #fff;
 }
 
 .navbar a {
@@ -81,6 +97,7 @@
     animation-fill-mode: backwards;
 }
 
+
 @keyframes hamburger-animation-1 {
     0% {
         transform: translateY(0);
@@ -101,6 +118,10 @@
 
 
 @media all and (max-width: 720px) {
+    .nav-list{
+        display: block;
+    }
+
     .navbar {
         flex-direction: column;
     }

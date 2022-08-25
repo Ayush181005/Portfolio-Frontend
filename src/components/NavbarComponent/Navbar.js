@@ -13,6 +13,12 @@ export const Navbar = () => {
   // Rurturn nothing if on login page to not show the navbar
   if (location.pathname==='/signin') return;
 
+  // Logout function
+  const handleLogout = () => {
+    localStorage.removeItem('auth-token');
+    window.location.reload();
+  }
+
   return (
     <header>
       <nav className='navbar'>
@@ -26,6 +32,9 @@ export const Navbar = () => {
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/about'?'active':''}`} to="/about">About Me</Link></li>
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/contact'?'active':''}`} to="/contact">Contact Me</Link></li>
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/certificate'?'active':''}`} to="/certificate">Certificates</Link></li>
+            {localStorage.getItem('auth-token') && <li className='list-item'>
+              <button className="navbar-btn" onClick={handleLogout} >Logout</button>
+            </li>}
         </ul>
         <div className="menu" id="toggle-button" onClick={navListToggle}>
           <div className="menu-line" id="menu-line-1"></div>
