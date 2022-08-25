@@ -6,12 +6,14 @@ import { Portfolio } from './components/PortfolioComponent/Portfolio';
 import { Certificate } from './components/CertificateComponent/Certificate';
 import { PortfolioDetail } from './components/PortfolioDetailComponent/PortfolioDetail';
 import { Signin } from './components/SigninComponent/Signin';
+import { Alert } from './components/AlertComponent/Alert';
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from 'react-router-dom';
 import PortfolioState from './context/portfolios/PortfolioState';
+import { useState } from 'react';
 
 /**
  * TODO:-
@@ -21,6 +23,15 @@ import PortfolioState from './context/portfolios/PortfolioState';
  */
 
 function App() {
+  // Alert functionality
+  const [alert, setAlert] = useState(null);
+  const showAlert = (msg, type) => {
+    setAlert({ msg, type });
+    setTimeout(() => {
+      setAlert(null);
+    }, 3000);
+  }
+
   return (
     <PortfolioState>
       <Router>
@@ -33,9 +44,11 @@ function App() {
             <Route exact path="/about" element={<AboutMe />}/>
             <Route exact path="/certificate" element={<Certificate />}/>
             <Route exact path="/portfolio/:slug" element={<PortfolioDetail />} />
-            <Route exact path="/signin" element={<Signin />} />
+            <Route exact path="/signin" element={<Signin showAlert={showAlert} />} />
           </Routes>
         </main>
+
+        {alert && <Alert alert={alert} />}
 
         <Footer />
       </Router>
