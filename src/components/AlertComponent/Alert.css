@@ -6,20 +6,29 @@
     height: auto;
     border-radius: 5px;
     border: 2px solid black;
-    background-color: #ffffff9c;
+    background-color: #ffffffb2;
     padding: 10px;
     font-weight: bold;
     font-family: sans-serif;
+    animation: alertShow .5s forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes alertShow {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 
 .alert-box.success {
-    color: white;
-    background-color: #5cca5c9c;
     border-color: #5cca5c;
 }
 
 .alert-box.error {
-    color: white;
-    background-color: #ca87879c;
     border-color: #ca5c5c;
 }
