@@ -11,10 +11,11 @@
 
 .main {
     width: 350px;
-	height: 500px;
+	height: 550px;
 	overflow: hidden;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
+	margin: 10px 10px;
 }
 
 #chk{
@@ -87,7 +88,7 @@ button:hover{
 }
 
 #chk:checked ~ .login{
-	transform: translateY(-500px);
+	transform: translateY(-550px);
 }
 #chk:checked ~ .login label{
 	transform: scale(1);	
