@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../images/logo.jpg'
 import './Navbar.css'
 import { Link, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 
-export const Navbar = () => {
+export const Navbar = (props) => {
+  const { getUserData, userData } = props;
   let location = useLocation();
+
+  
+  useEffect(() => {
+    const myFunc = async () => {
+      const myData = await getUserData();
+    }
+    myFunc();
+  }, []);
 
   const navListToggle = () => {
     document.getElementById('nav-list').classList.toggle('nav-list-hidden');
@@ -19,6 +29,9 @@ export const Navbar = () => {
     window.location.reload();
   }
 
+  // Handle dropdown toggle
+  const dropdownClick = () => document.getElementsByClassName('dropdown')[0].classList.toggle('hidden');
+
   return (
     <header>
       <nav className='navbar'>
@@ -31,9 +44,14 @@ export const Navbar = () => {
             <li className='list-item'><Link className={`navbar-text left ${location.pathname==='/'?'active':''}`} to="/">Home</Link></li>
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/about'?'active':''}`} to="/about">About Me</Link></li>
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/contact'?'active':''}`} to="/contact">Contact Me</Link></li>
-            <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/certificate'?'active':''}`} to="/certificate">Certificates</Link></li>
-            {localStorage.getItem('auth-token') && <li className='list-item'>
-              <button className="navbar-btn" onClick={handleLogout} >Logout</button>
+            {userData.success && <li className='list-item'>
+              <button className="btn navbar-btn" onClick={dropdownClick}>Hi {userData.user.name}</button>
+              <div className="dropdown hidden">
+                <div className="dropdown-menu">
+                  <div className="dropdown-item" onClick={handleLogout}>Logout</div>
+                  {userData.user.type==='superuser' && <div className="dropdown-item"><Link to="/admin">Admin</Link></div>}
+                </div>
+              </div>
             </li>}
         </ul>
         <div className="menu" id="toggle-button" onClick={navListToggle}>
