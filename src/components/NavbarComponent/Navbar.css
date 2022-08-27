@@ -20,20 +20,6 @@
     padding: 20px 10px;
 }
 
-.navbar-btn {
-    background-color: #ddd;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 10px 10px;
-    border-radius: 2px;
-}
-
-.navbar-btn:hover {
-    background-color: #333;
-    color: #fff;
-}
-
 .navbar a {
     text-decoration: none;
 }
@@ -97,6 +83,38 @@
     animation-fill-mode: backwards;
 }
 
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: inline-block;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    font-size: initial !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dropdown-item {
+    background-color: #eee;
+    display: block;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #ddd;
+}
+
+.dropdown.hidden {
+    display:none;
+}
 
 @keyframes hamburger-animation-1 {
     0% {

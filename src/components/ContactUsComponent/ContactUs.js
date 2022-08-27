@@ -51,7 +51,7 @@ export const ContactUs = () => {
               <textarea name="message" id="form-message" cols="30" rows="10" placeholder='Start typing...'></textarea>
             </div>
             <div className="inputBox">
-              <button type="submit" className='submit-btn'>Submit</button>
+              <button type="submit" className='btn submit-btn'>Submit</button>
             </div>
           </form>
         </div>
