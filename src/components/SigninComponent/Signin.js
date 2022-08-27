@@ -35,6 +35,7 @@ export const Signin = (props) => {
             localStorage.setItem('auth-token', jsonResponse.authToken);
             showAlert('Successfully Logged In', 'success');
             navigate('/'); // Redirect to home page
+            window.location.reload();
         }
         else {
             let errorMsg = ""
@@ -68,6 +69,7 @@ export const Signin = (props) => {
             localStorage.setItem('auth-token', jsonResponse.authToken);
             showAlert('Account Created Successfully and logged in!', 'success');
             navigate('/'); // Redirect to home page
+            window.location.reload();
         }
         else {
             let errorMsg = ""
