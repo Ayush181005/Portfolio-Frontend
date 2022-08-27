@@ -3,10 +3,12 @@ import { ContactUs } from './components/ContactUsComponent/ContactUs';
 import { AboutMe } from './components/AboutMeComponent/AboutMe';
 import { Footer } from './components/FooterComponent/Footer';
 import { Portfolio } from './components/PortfolioComponent/Portfolio';
-import { Certificate } from './components/CertificateComponent/Certificate';
 import { PortfolioDetail } from './components/PortfolioDetailComponent/PortfolioDetail';
 import { Signin } from './components/SigninComponent/Signin';
 import { Alert } from './components/AlertComponent/Alert';
+import { Admin } from './components/Admin/AdminComponent/Admin';
+import { PortfolioAdmin } from './components/Admin/PortfolioAdminComponent/PortfolioAdmin';
+import { PortfolioAdd } from './components/Admin/PortfolioAddComponent/PortfolioAdd';
 import {
   BrowserRouter as Router,
   Routes,
@@ -23,6 +25,9 @@ import { useState } from 'react';
  */
 
 function App() {
+  const host = "localhost";
+  const port = "5000";
+
   // Alert functionality
   const [alert, setAlert] = useState(null);
   const showAlert = (msg, type) => {
@@ -32,19 +37,38 @@ function App() {
     }, 3000);
   }
 
+  // Get User Data
+  const [userData, setUserData] = useState({});
+  const getUserData = async () => {
+    const response = await fetch(`http://${host}:${port}/api/auth/getuser`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': localStorage.getItem('auth-token')
+      }
+    });
+    const jsonResponse = await response.json();
+    setUserData(jsonResponse);
+    return jsonResponse;
+  };
+
   return (
     <PortfolioState>
       <Router>
-        <Navbar />
+        <Navbar getUserData={getUserData} userData={userData} />
 
         <main>
           <Routes>
             <Route exact path="/" element={<Portfolio />}/>
             <Route exact path="/contact" element={<ContactUs />}/>
             <Route exact path="/about" element={<AboutMe />}/>
-            <Route exact path="/certificate" element={<Certificate />}/>
             <Route exact path="/portfolio/:slug" element={<PortfolioDetail />} />
             <Route exact path="/signin" element={<Signin showAlert={showAlert} />} />
+
+            {/* Admin */}
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/portfolios" element={<PortfolioAdmin />} />
+            <Route path="/admin/portfolios/add" element={<PortfolioAdd showAlert={showAlert} />} />
           </Routes>
         </main>
 
