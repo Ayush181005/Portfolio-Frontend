@@ -6,7 +6,7 @@ const apiCall = async (url, method, requestBody) => {
         method,
         headers: {
             'Content-Type': 'application/json',
-            authToken: localStorage.getItem('authToken')
+            'auth-token': localStorage.getItem('auth-token')
         },
         body: JSON.stringify(requestBody)
     });
