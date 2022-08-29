@@ -7,8 +7,6 @@ import { PortfolioDetail } from './components/PortfolioDetailComponent/Portfolio
 import { Signin } from './components/SigninComponent/Signin';
 import { Alert } from './components/AlertComponent/Alert';
 import { Admin } from './components/Admin/AdminComponent/Admin';
-import { PortfolioAdmin } from './components/Admin/PortfolioAdminComponent/PortfolioAdmin';
-import { PortfolioAdd } from './components/Admin/PortfolioAddComponent/PortfolioAdd';
 import {
   BrowserRouter as Router,
   Routes,
@@ -40,6 +38,9 @@ function App() {
   // Get User Data
   const [userData, setUserData] = useState({});
   const getUserData = async () => {
+    if (!localStorage.getItem('auth-token')) {
+      return;
+    }
     const response = await fetch(`http://${host}:${port}/api/auth/getuser`, {
       method: 'POST',
       headers: {
@@ -66,9 +67,9 @@ function App() {
             <Route exact path="/signin" element={<Signin showAlert={showAlert} />} />
 
             {/* Admin */}
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/admin/portfolios" element={<PortfolioAdmin />} />
-            <Route path="/admin/portfolios/add" element={<PortfolioAdd showAlert={showAlert} />} />
+            <Route path="/admin/*" element={
+              <Admin showAlert={showAlert} getUserData={getUserData} userData={userData} />
+            } />
           </Routes>
         </main>
 
