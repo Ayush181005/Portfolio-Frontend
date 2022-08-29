@@ -27,11 +27,20 @@ const PortfolioState = (props) => {
         setPortfolios(jsonResponse);
     }
 
+    // Get Portfolio from id
+    const getPortfolioFromId = async (id) => {
+        const url = `http://${host}:${port}/api/portfolios/getportfoliofromid/${id}`;
+        const jsonResponse = await apiCall(url, 'GET');
+        setPortfolio(jsonResponse);
+        return(jsonResponse);
+    }
+
     // Get Portfolio from slug
     const getPortfolioFromSlug = async (slug) => {
         const url = `http://${host}:${port}/api/portfolios/getportfolio/${slug}`;
         const jsonResponse = await apiCall(url, 'GET');
         setPortfolio(jsonResponse);
+        return jsonResponse;
     }
 
     // Add Portfolio
@@ -81,6 +90,7 @@ const PortfolioState = (props) => {
             portfolios,
             portfolio,
             getPortfolios,
+            getPortfolioFromId,
             getPortfolioFromSlug,
             addPortfolio,
             deletePortfolio,
