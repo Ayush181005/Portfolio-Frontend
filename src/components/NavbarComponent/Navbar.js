@@ -44,7 +44,7 @@ export const Navbar = (props) => {
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/about'?'active':''}`} to="/about">About Me</Link></li>
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/contact'?'active':''}`} to="/contact">Contact Me</Link></li>
             {userData.success && <li className='list-item'>
-              <button className="btn navbar-btn" onClick={dropdownClick}>Hi {userData.user.name}</button>
+              <button className="btn navbar-btn" onClick={dropdownClick}>Hi {userData.user.name}&nbsp;<i class="arrow down"></i></button>
               <div className="dropdown hidden">
                 <div className="dropdown-menu">
                   <div className="dropdown-item" onClick={handleLogout}>Logout</div>
