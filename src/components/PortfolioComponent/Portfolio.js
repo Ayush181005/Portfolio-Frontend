@@ -12,7 +12,7 @@ export const Portfolio = () => {
     <section className="portfolio-section">
       <div className="portfolio-container">
           <h1>Portfolio</h1>
-          {portfolios.length!=0 ? portfolios.map((portfolio, i) => {
+          {portfolios.length>0 ? portfolios.map((portfolio, i) => {
             if (portfolio.slug) {
               // If there is a slug, then render a link to the portfolio page
               return(
