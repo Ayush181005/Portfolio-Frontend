@@ -9,7 +9,7 @@ export const Footer = () => {
 
     // Rurturn nothing if on login page to not show the navbar
     let location = useLocation();
-    if (location.pathname === '/signin') return;
+    if (location.pathname === '/signin' || location.pathname.startsWith('/admin')) return;
 
     return (
         <footer>

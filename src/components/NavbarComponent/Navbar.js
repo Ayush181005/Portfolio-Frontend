@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import logo from '../../images/logo.jpg'
 import './Navbar.css'
 import { Link, useLocation } from 'react-router-dom'
@@ -8,7 +8,6 @@ export const Navbar = (props) => {
   const { getUserData, userData } = props;
   let location = useLocation();
 
-  
   useEffect(() => {
     const myFunc = async () => {
       const myData = await getUserData();
@@ -21,7 +20,7 @@ export const Navbar = (props) => {
   }
 
   // Rurturn nothing if on login page to not show the navbar
-  if (location.pathname==='/signin') return;
+  if (location.pathname==='/signin' || location.pathname.startsWith('/admin')) return;
 
   // Logout function
   const handleLogout = () => {
@@ -49,7 +48,7 @@ export const Navbar = (props) => {
               <div className="dropdown hidden">
                 <div className="dropdown-menu">
                   <div className="dropdown-item" onClick={handleLogout}>Logout</div>
-                  {userData.user.type==='superuser' && <div className="dropdown-item"><Link to="/admin">Admin</Link></div>}
+                  {userData.user.type==='superuser' && <a href="/admin" target="_blank"><div className="dropdown-item">Admin</div></a>}
                 </div>
               </div>
             </li>}
