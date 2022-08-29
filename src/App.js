@@ -61,7 +61,7 @@ function App() {
         <main>
           <Routes>
             <Route exact path="/" element={<Portfolio />}/>
-            <Route exact path="/contact" element={<ContactUs />}/>
+            <Route exact path="/contact" element={<ContactUs showAlert={showAlert} />}/>
             <Route exact path="/about" element={<AboutMe />}/>
             <Route exact path="/portfolio/:slug" element={<PortfolioDetail />} />
             <Route exact path="/signin" element={<Signin showAlert={showAlert} />} />

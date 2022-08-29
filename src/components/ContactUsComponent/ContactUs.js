@@ -1,14 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ContactUs.css'
 import { Link } from 'react-router-dom'
 
-export const ContactUs = () => {
+export const ContactUs = (props) => {
   /**
    * TODO:-
-   * make frontend
-   * make backend
    * google recaptcha integration
    */
+
+  const host = 'localhost';
+  const port = '5000';
+  const { showAlert } = props;
+
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const handleOnChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`http://${host}:${port}/api/contacts/addcontact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+    const jsonResponse = await response.json();
+    if (jsonResponse.success) {
+      showAlert('Contact Saved Successfully, I\'ll come back to you soon', 'success');
+    }
+    else {
+      let errorMsg = ""
+      jsonResponse.errors.map(error => {
+        errorMsg += error.msg + "\n";
+      });
+      showAlert(errorMsg, 'error');
+    }
+  }
 
   const contactFormFocus = () => {
     document.querySelector('form input').focus();
@@ -36,19 +62,19 @@ export const ContactUs = () => {
           </div>
         </div>
         <div className="contactForm">
-          <form>
+          <form onSubmit={handleSubmit}>
             <h2>Can't wait to see your message!</h2>
             <div className="inputBox">
               <label htmlFor="form-name">Name</label>
-              <input type="text" name='name' id='form-name' placeholder='Your Name please' required />
+              <input type="text" name='name' id='form-name' placeholder='Your Name please' onChange={handleOnChange} required />
             </div>
             <div className="inputBox">
               <label htmlFor="form-email">Email</label>
-              <input type="email" name='email' id='form-email' placeholder='Your Email here' required />
+              <input type="email" name='email' id='form-email' placeholder='Your Email here' onChange={handleOnChange} required />
             </div>
             <div className="inputBox">
-              <label htmlFor="form-message">Your Message:</label>
-              <textarea name="message" id="form-message" cols="30" rows="10" placeholder='Start typing...'></textarea>
+              <label htmlFor="form-msg">Your Message:</label>
+              <textarea name="msg" id="form-msg" cols="30" rows="10" onChange={handleOnChange} placeholder='Start typing...'></textarea>
             </div>
             <div className="inputBox">
               <button type="submit" className='btn submit-btn'>Submit</button>
