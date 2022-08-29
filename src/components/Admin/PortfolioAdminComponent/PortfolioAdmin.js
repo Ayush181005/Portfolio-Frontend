@@ -21,7 +21,7 @@ export const PortfolioAdmin = (props) => {
             showAlert(errorMsg, 'error');
         }
     }
-    
+
     return (
         <section className='portfolio-admin-section'>
             <h1>Portfolios</h1>

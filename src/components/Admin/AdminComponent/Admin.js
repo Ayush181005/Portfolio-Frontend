@@ -8,6 +8,7 @@ import {
 import { PortfolioAdmin } from '../PortfolioAdminComponent/PortfolioAdmin';
 import { PortfolioAdd } from '../PortfolioAddComponent/PortfolioAdd';
 import { PortfolioEdit } from '../PortfolioEditComponent/PortfolioEdit';
+import { ContactAdmin } from '../ContactAdminComponent/ContactAdmin';
 
 export const Admin = (props) => {
   const navigate = useNavigate();
@@ -43,8 +44,14 @@ export const Admin = (props) => {
       <div>
         <Link to="/admin/portfolios">Portfolios</Link>
       </div>
+      <div>
+        <Link to="/admin/contacts">Contacts</Link>
+      </div>
+
+      <hr />
 
       <Routes>
+        <Route path="contacts" element={<ContactAdmin showAlert={showAlert} />} />
         <Route path="portfolios" element={<PortfolioAdmin showAlert={showAlert} />} />
         <Route path="portfolios/add" element={<PortfolioAdd showAlert={showAlert} />} />
         <Route path="portfolios/edit/:id" element={<PortfolioEdit showAlert={showAlert} />} />
