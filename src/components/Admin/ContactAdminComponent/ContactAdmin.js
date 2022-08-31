@@ -2,9 +2,11 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export const ContactAdmin = () => {
-    const host = 'localhost';
-    const port = '5000';
+export const ContactAdmin = (props) => {
+    const { showAlert } = props;
+
+    const host = process.env.REACT_APP_SERVER_HOST;
+    const port = process.env.REACT_APP_SERVER_PORT;
     const [contacts, setContacts] = useState([]);
 
     useEffect(() => {
@@ -20,6 +22,27 @@ export const ContactAdmin = () => {
             setContacts(jsonResponse)
         })();
     }, []);
+
+    const handleDelete = async (id) => {
+        const response = await fetch(`http://${host}:${port}/api/contacts/deletecontact/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('auth-token')
+            }
+        });
+        const jsonResponse = await response.json();
+        if (jsonResponse.success) {
+            showAlert('Deleted Contact', 'success');
+        }
+        else {
+            let errorMsg = ""
+            jsonResponse.errors.map(error => {
+                errorMsg += error.msg + "\n";
+            });
+            showAlert(errorMsg, 'error');
+        }
+    }
 
     return (
         <section className='contact-admin-section'>
@@ -39,12 +62,12 @@ export const ContactAdmin = () => {
                                 <td>{contact.name}</td>
                                 <td>{contact.email}</td>
                                 <td>{contact.msg}</td>
-                                <td><button className="btn btn-sm">Delete</button></td>
+                                <td><button className="btn btn-sm" onClick={()=>{handleDelete(contact._id)}}>Delete</button></td>
                             </tr>
                         )
                     })}
                 </table>
-            : <small>No Portfolios to display</small>}
+            : <div><small>No Contacts to display</small></div>}
         </section>
     )
 }
