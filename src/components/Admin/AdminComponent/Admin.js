@@ -9,6 +9,7 @@ import { PortfolioAdmin } from '../PortfolioAdminComponent/PortfolioAdmin';
 import { PortfolioAdd } from '../PortfolioAddComponent/PortfolioAdd';
 import { PortfolioEdit } from '../PortfolioEditComponent/PortfolioEdit';
 import { ContactAdmin } from '../ContactAdminComponent/ContactAdmin';
+import { UserAdmin } from '../UserAdminComponent/UserAdmin';
 
 export const Admin = (props) => {
   const navigate = useNavigate();
@@ -17,6 +18,8 @@ export const Admin = (props) => {
 
   // If on admin page and not logged in as superuser, redirect to home page
   useEffect(() => {
+    document.title = 'Admin';
+
     const myFunc = async () => {
       if (!localStorage.getItem('auth-token')){
         showAlert("Access Denied", "error");
@@ -52,6 +55,7 @@ export const Admin = (props) => {
 
       <Routes>
         <Route path="contacts" element={<ContactAdmin showAlert={showAlert} />} />
+        <Route path="users" element={<UserAdmin showAlert={showAlert} />} />
         <Route path="portfolios" element={<PortfolioAdmin showAlert={showAlert} />} />
         <Route path="portfolios/add" element={<PortfolioAdd showAlert={showAlert} />} />
         <Route path="portfolios/edit/:id" element={<PortfolioEdit showAlert={showAlert} />} />
