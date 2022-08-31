@@ -15,16 +15,9 @@ import {
 import PortfolioState from './context/portfolios/PortfolioState';
 import { useState } from 'react';
 
-/**
- * TODO:-
- * make frontend, lazy loading images
- * make backend
- * use concurrently to run backend and frontend simultaneously (video 55 cwh)
- */
-
 function App() {
-  const host = "localhost";
-  const port = "5000";
+  const host = process.env.REACT_APP_SERVER_HOST;
+  const port = process.env.REACT_APP_SERVER_PORT;
 
   // Alert functionality
   const [alert, setAlert] = useState(null);

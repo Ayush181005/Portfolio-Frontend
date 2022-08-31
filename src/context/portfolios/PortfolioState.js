@@ -15,8 +15,8 @@ const apiCall = async (url, method, requestBody) => {
 }
 
 const PortfolioState = (props) => {
-    const host = 'localhost';
-    const port = '5000';
+    const host = process.env.REACT_APP_SERVER_HOST;
+    const port = process.env.REACT_APP_SERVER_PORT;
     const [portfolios, setPortfolios] = useState([]); // Array of portfolio objects
     const [portfolio, setPortfolio] = useState({}); // single portfolio object
 

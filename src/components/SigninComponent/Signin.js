@@ -4,8 +4,8 @@ import './Signin.css';
 import { useNavigate } from 'react-router-dom';
 
 export const Signin = (props) => {
-    const host = 'localhost';
-    const port = '5000';
+    const host = process.env.REACT_APP_SERVER_HOST;
+    const port = process.env.REACT_APP_SERVER_PORT;
     const { showAlert } = props;
 
     const navigate = useNavigate(); // useNavigate hook for redirecting
