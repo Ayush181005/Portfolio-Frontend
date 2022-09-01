@@ -8,6 +8,14 @@ export const Portfolio = () => {
   const { portfolios, getPortfolios } = useContext(PortfolioContext);
   useEffect(() => {getPortfolios()}, []); // calls only once
 
+  // TODO:-
+  /**
+   * Grouping the portfolios by type
+   * Infinite scroll in portfolios
+   * 
+   * recaptcha for signin page
+   */
+
   return (
     <section className="portfolio-section">
       <div className="portfolio-container">
