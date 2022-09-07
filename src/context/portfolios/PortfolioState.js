@@ -5,7 +5,7 @@ const apiCall = async (url, method, requestBody) => {
     const response = await fetch(url, {
         method,
         headers: {
-            'Content-Type': 'application/json',
+            // 'Content-Type': 'application/json',
             'auth-token': localStorage.getItem('auth-token')
         },
         body: JSON.stringify(requestBody)
