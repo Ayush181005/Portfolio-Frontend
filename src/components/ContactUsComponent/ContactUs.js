@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import './ContactUs.css';
 import { Link } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { useEffect } from 'react';
 
 export const ContactUs = (props) => {
   const host = process.env.REACT_APP_SERVER_HOST;

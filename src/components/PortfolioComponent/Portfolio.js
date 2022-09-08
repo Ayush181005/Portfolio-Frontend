@@ -10,8 +10,6 @@ export const Portfolio = () => {
 
   // TODO:-
   /**
-   * Infinite scroll in portfolios
-   * 
    * recaptcha for signin page
    */
 
@@ -32,7 +30,7 @@ export const Portfolio = () => {
         {portfolios.length > 0 ? allPortfolioTypes.map((type, i) => {
           return (
             <div key={i}>
-              <h2 class="text-portfolio-type">{type}</h2>
+              {type ? <h2 className="text-portfolio-type">{type}</h2> : <h2 className="text-portfolio-type">Other</h2>}
               {getPortfoliosFromType(type).map((portfolio, i) => {
                 if (portfolio.slug) {
                   // If there is a slug, then render a link to the portfolio page

@@ -18,8 +18,6 @@ export const Admin = (props) => {
 
   // If on admin page and not logged in as superuser, redirect to home page
   useEffect(() => {
-    document.title = 'Admin';
-
     const myFunc = async () => {
       if (!localStorage.getItem('auth-token')){
         showAlert("Access Denied", "error");

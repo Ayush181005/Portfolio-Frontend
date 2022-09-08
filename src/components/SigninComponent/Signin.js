@@ -1,12 +1,14 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Signin.css';
 import { useNavigate } from 'react-router-dom';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export const Signin = (props) => {
     const host = process.env.REACT_APP_SERVER_HOST;
     const port = process.env.REACT_APP_SERVER_PORT;
     const { showAlert } = props;
+
+    const recaptchaRef = useRef();
 
     const navigate = useNavigate(); // useNavigate hook for redirecting
 
@@ -23,12 +25,16 @@ export const Signin = (props) => {
     const onLoginChange = (e) => setLoginCredentials({ ...loginCredentials, [e.target.name]: e.target.value });
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
+
+        const recaptchaToken = await recaptchaRef.current.executeAsync(); // Recaptcha token
+        recaptchaRef.current.reset(); // Reset recaptcha to make it ready for another check
+
         const response = await fetch(`http://${host}:${port}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(loginCredentials)
+            body: JSON.stringify({...loginCredentials, recaptchaToken})
         });
         const jsonResponse = await response.json();
         if (jsonResponse.success) {
@@ -51,6 +57,10 @@ export const Signin = (props) => {
     const onSignupChange = (e) => setSignupCredentials({ ...signupCredentials, [e.target.name]: e.target.value });
     const handleSignupSubmit = async (e) => {
         e.preventDefault();
+
+        const recaptchaToken = await recaptchaRef.current.executeAsync(); // Recaptcha token
+        recaptchaRef.current.reset(); // Reset recaptcha to make it ready for another check
+
         const { name, email, password, passwordCheck } = signupCredentials;
         if (password !== passwordCheck) {
             showAlert("Passwords do not match", "error");
@@ -61,7 +71,7 @@ export const Signin = (props) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ name, email, password })
+            body: JSON.stringify({ name, email, password, recaptchaToken })
         });
         const jsonResponse = await response.json();
         console.log(jsonResponse);
@@ -91,6 +101,11 @@ export const Signin = (props) => {
                         <input type="email" name='email' onChange={onSignupChange} placeholder='Email' required />
                         <input type="password" name='password' onChange={onSignupChange} placeholder='Password' minLength={5} required />
                         <input type="password" name='passwordCheck' onChange={onSignupChange} placeholder='Confirm Password' minLength={5} required />
+                        <ReCAPTCHA
+                            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                            size="invisible"
+                            ref={recaptchaRef}
+                        />
                         <button type='submit'>Sign up</button>
                     </form>
                 </div>
@@ -101,6 +116,11 @@ export const Signin = (props) => {
                         <input type='email' name='email' value={loginCredentials.loginEmail} onChange={onLoginChange} placeholder='Email' required />
                         <input type='password' name='password' value={loginCredentials.loginPassword} onChange={onLoginChange} placeholder='Password' required />
                         <button type='submit'>Login</button>
+                        <ReCAPTCHA
+                            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                            size="invisible"
+                            ref={recaptchaRef}
+                        />
                     </form>
                 </div>
             </div>
