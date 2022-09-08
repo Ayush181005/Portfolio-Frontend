@@ -33,8 +33,7 @@ export const PortfolioAdd = (props) => {
         <section className='portfolio-add-section'>
             <h1>Add a Portfolio</h1>
             <Link to="/admin">admin</Link>&gt;<Link to="/admin/portfolios">portfolios</Link>&gt;add
-            {/* <form onSubmit={handleSubmit} action="http://localhost:5000/api/portfolios/addportfolio" method="post" encType='multipart/form-data'> */}
-            <form onSubmit={handleSubmit}>
+            <form action="http://localhost:5000/api/portfolios/addportfolio" method="post" encType='multipart/form-data'>
                 <div className="inputBox">
                     <label htmlFor="form-title">Title</label>
                     <input type="text" name='title' id='form-title' placeholder='Title' required />
