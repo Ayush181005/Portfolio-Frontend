@@ -42,6 +42,8 @@ export const Navbar = (props) => {
         <ul className='nav-list nav-list-hidden' id="nav-list">
             <li className='list-item'><Link className={`navbar-text left ${location.pathname==='/'?'active':''}`} to="/">Home</Link></li>
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/about'?'active':''}`} to="/about">About Me</Link></li>
+            <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/portfolio'?'active':''}`} to="/portfolio">Portfolio</Link></li>
+            <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/certificates'?'active':''}`} to="/certificates">Certificates</Link></li>
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/contact'?'active':''}`} to="/contact">Contact Me</Link></li>
             {userData.success && <li className='list-item'>
               <button className="btn navbar-btn" onClick={dropdownClick}>Hi {userData.user.name}&nbsp;<i className="arrow down"></i></button>

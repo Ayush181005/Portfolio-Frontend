@@ -1,0 +1,20 @@
+.img-container {
+    background-color: rgba(185, 235, 248, 0.1);
+    border-top-left-radius: 40%;
+    border-top-right-radius: 60%;
+    border-bottom-right-radius: 35%;
+    border-bottom-left-radius: 70%;
+    height: 100%;
+    max-width: fit-content;
+    /* padding: 50px; */
+}
+.img-container-2 {
+    background-color: rgba(142, 252, 166, 0.1);
+    border-top-left-radius: 70%;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 55%;
+    border-bottom-left-radius: 20%;
+    height: 100%;
+    max-width: fit-content;
+    padding: 50px;
+}
