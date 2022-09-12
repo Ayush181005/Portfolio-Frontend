@@ -53,6 +53,7 @@ export const ContactAdmin = (props) => {
                         <th>Name</th>
                         <th>Email</th>
                         <th>Msg</th>
+                        <th>Date</th>
                         <th>Actions</th>
                     </tr>
                     {contacts.map((contact, i) => {
@@ -61,6 +62,7 @@ export const ContactAdmin = (props) => {
                                 <td>{contact.name}</td>
                                 <td>{contact.email}</td>
                                 <td>{contact.msg}</td>
+                                <td>{contact.timeStamp}</td>
                                 <td><button className="btn btn-sm" onClick={()=>{handleDelete(contact._id)}}>Delete</button></td>
                             </tr>
                         )
