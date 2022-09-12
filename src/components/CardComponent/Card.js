@@ -6,7 +6,7 @@ export const Card = (props) => {
   return (
     <div className="portfolio-card">
         <img src={img_url} alt="Hello, World" />
-        <div className="portfolio-text">{text}</div>
+        {text && <div className="portfolio-text">{text}</div>}
     </div>
   )
 }

@@ -6,12 +6,7 @@ import PortfolioContext from '../../context/portfolios/PortfolioContext'
 
 export const Portfolio = () => {
   const { portfolios, getPortfolios } = useContext(PortfolioContext);
-  useEffect(() => { getPortfolios() }, []); // calls only once
-
-  // TODO:-
-  /**
-   * recaptcha for signin page
-   */
+  useEffect(() => { getPortfolios() }, []); // Get portfolios on mount
 
   // Add all the unique types of portfolios to an array
   const allPortfolioTypes = [];
@@ -20,8 +15,6 @@ export const Portfolio = () => {
       allPortfolioTypes.push(portfolio.type);
     }
   });
-  // Function to filter the portfolios by type
-  // const getPortfoliosFromType = (type) => portfolios.filter(portfolio => portfolio.type === type);
 
   return (
     <section className="portfolio-section">
@@ -33,14 +26,13 @@ export const Portfolio = () => {
               {type ? <h2 className="text-portfolio-type">{type}</h2> : <h2 className="text-portfolio-type">Other</h2>}
               {portfolios.map((portfolio, i) => {
                 if (portfolio.type === type) {
-                  // const base64String = btoa(String.fromCharCode(...new Uint8Array(portfolio.img.data.data)));
                   const base64String = btoa(new Uint8Array(portfolio.img.data.data).reduce(function (data, byte) {return data + String.fromCharCode(byte);}, ''));
 
                   if (portfolio.slug) {
                     // If there is a slug, then render a link to the portfolio page
                     return (
-                      <Link to={`/portfolio/${portfolio.slug}`} key={i}>
-                        <Card text={portfolio.title} img_url={`data:image/png;base64,${base64String}`} />
+                      <Link to={`/portfolio/${portfolio.slug}`} key={i} title={portfolio.title}>
+                        <Card img_url={`data:image/png;base64,${base64String}`}/>
                       </Link>
                     )
                   }

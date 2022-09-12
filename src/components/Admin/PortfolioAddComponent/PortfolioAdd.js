@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 export const PortfolioAdd = (props) => {
+    const host = process.env.REACT_APP_SERVER_HOST;
+    const port = process.env.REACT_APP_SERVER_PORT;
     const { showAlert } = props;
     const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ export const PortfolioAdd = (props) => {
         }
         formData.append('image', e.target.image.files[0])
 
-        const response = await fetch('http://localhost:5000/api/portfolios/addportfolio', {
+        const response = await fetch(`http://${host}:${port}/api/portfolios/addportfolio`, {
             headers: {
                 'auth-token': localStorage.getItem('auth-token')
             },
@@ -62,7 +64,7 @@ export const PortfolioAdd = (props) => {
                 </div>
                 <div className="inputBox">
                     <label htmlFor="form-image">Image</label>
-                    <input onChange={handleOnChange} type="file" accept="image/*" name='image' id='form-image' />
+                    <input onChange={handleOnChange} type="file" accept="image/*" name='image' id='form-image' required/>
                 </div>
                 <div className="inputBox">
                     <label htmlFor="form-desc">Description</label>

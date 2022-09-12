@@ -14,6 +14,7 @@ a .portfolio-card {
 }
 
 .portfolio-card img {
+    max-height: 200px;
     height: 100%;
     border-radius: 5px;
     object-fit: cover;
@@ -47,4 +48,27 @@ a .portfolio-card {
 .portfolio-card:hover {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
     transform: translateY(-5px);
+}
+
+@media all and (max-width:1115px){
+    .portfolio-card {
+        width: 50%;
+    }
+
+    .portfolio-card img {
+        max-height: 300px;
+        height: 100%;
+    }
+}
+
+@media all and (max-width:849px){
+    .portfolio-card {
+        width: 100%;
+    }
+
+    .portfolio-card img {
+        width: 100%;
+        max-height: 300px;
+        height: 100%;
+    }
 }
