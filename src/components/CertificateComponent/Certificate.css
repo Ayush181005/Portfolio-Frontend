@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.certificates-section {
+    padding: 50px 100px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.certificates-section .certificates-container h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.text-certificate-year {
+    margin-top: 20px;
+}
