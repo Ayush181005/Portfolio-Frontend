@@ -10,6 +10,8 @@ import { PortfolioAdd } from '../PortfolioAddComponent/PortfolioAdd';
 import { PortfolioEdit } from '../PortfolioEditComponent/PortfolioEdit';
 import { ContactAdmin } from '../ContactAdminComponent/ContactAdmin';
 import { UserAdmin } from '../UserAdminComponent/UserAdmin';
+import { CertificateAdmin } from '../CertificateAdminComponent/CertificateAdmin';
+import { CertificateAdd } from '../CertificateAddComponent/CertificateAdd';
 
 export const Admin = (props) => {
   const navigate = useNavigate();
@@ -46,6 +48,9 @@ export const Admin = (props) => {
         <Link to="/admin/portfolios">Portfolios</Link>
       </div>
       <div>
+        <Link to="/admin/certificates">Certificates</Link>
+      </div>
+      <div>
         <Link to="/admin/contacts">Contacts</Link>
       </div>
 
@@ -57,6 +62,8 @@ export const Admin = (props) => {
         <Route path="portfolios" element={<PortfolioAdmin showAlert={showAlert} />} />
         <Route path="portfolios/add" element={<PortfolioAdd showAlert={showAlert} />} />
         <Route path="portfolios/edit/:id" element={<PortfolioEdit showAlert={showAlert} />} />
+        <Route path="certificates" element={<CertificateAdmin showAlert={showAlert} />} />
+        <Route path="certificates/add" element={<CertificateAdd showAlert={showAlert} />} />
       </Routes>
     </>
   )
