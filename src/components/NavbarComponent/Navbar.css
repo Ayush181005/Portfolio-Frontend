@@ -195,4 +195,8 @@
     .nav-list-hidden {
         display: none;
     }
+
+    .dropdown-menu {
+        right: 0;
+    }
 }

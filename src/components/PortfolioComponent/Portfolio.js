@@ -32,7 +32,7 @@ export const Portfolio = () => {
                     // If there is a slug, then render a link to the portfolio page
                     return (
                       <Link to={`/portfolio/${portfolio.slug}`} key={i} title={portfolio.title}>
-                        <Card img_url={`data:image/png;base64,${base64String}`}/>
+                        <Card text={portfolio.title} img_url={`data:image/png;base64,${base64String}`}/>
                       </Link>
                     )
                   }
