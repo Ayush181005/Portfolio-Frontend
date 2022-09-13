@@ -45,7 +45,7 @@ export const Signin = (props) => {
         }
         else {
             let errorMsg = ""
-            jsonResponse.errors.map(error => {
+            jsonResponse.errors.forEach(error => {
                 errorMsg += error.msg + "\n";
             });
             showAlert(errorMsg, 'error');
@@ -83,7 +83,7 @@ export const Signin = (props) => {
         }
         else {
             let errorMsg = ""
-            jsonResponse.errors.map(error => {
+            jsonResponse.errors.forEach(error => {
                 errorMsg += error.msg + "\n";
             });
             showAlert(errorMsg, 'error');

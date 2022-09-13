@@ -1,13 +1,21 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Portfolio.css'
 import { Card } from '../CardComponent/Card'
 import { Link } from 'react-router-dom'
 import PortfolioContext from '../../context/portfolios/PortfolioContext'
+import { Spinner } from '../SpinnerComponent/Spinner'
 
-export const Portfolio = () => {
+export const Portfolio = (props) => {
+  const { setLoadingBarProgress } = props;
+  const [loading, setLoading] = useState(true);
+
   const { portfolios, getPortfolios } = useContext(PortfolioContext);
-  useEffect(() => { getPortfolios() }, []); // Get portfolios on mount
-
+  useEffect(() => {
+    setLoadingBarProgress(50);
+    getPortfolios()
+    .then(()=>{setLoadingBarProgress(100);setLoading(false);});
+  }, []); // Get portfolios on mount
+  
   // Add all the unique types of portfolios to an array
   const allPortfolioTypes = [];
   portfolios.forEach(portfolio => {
@@ -20,7 +28,8 @@ export const Portfolio = () => {
     <section className="portfolio-section">
       <div className="portfolio-container">
         <h1>Portfolio</h1>
-        {portfolios.length > 0 ? allPortfolioTypes.map((type, i) => {
+        {loading && <Spinner />}
+        {!loading && portfolios.length>0 ? allPortfolioTypes.map((type, i) => {
           return (
             <div key={i}>
               {type ? <h2 className="text-portfolio-type">{type}</h2> : <h2 className="text-portfolio-type">Other</h2>}
@@ -46,7 +55,7 @@ export const Portfolio = () => {
               })}
             </div>
           )
-        }) : <h2>No portfolios found</h2>}
+        }) : <h2>{!loading && 'No portfolios found'}</h2>}
       </div>
     </section>
   )

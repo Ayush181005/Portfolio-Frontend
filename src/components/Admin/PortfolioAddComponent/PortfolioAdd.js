@@ -29,11 +29,11 @@ export const PortfolioAdd = (props) => {
         const jsonResponse = await response.json();
         if (jsonResponse.success) {
             showAlert(`Added Portfolio - ${data.title}`, 'success');
-            navigate('/'); // Redirect to home page
+            navigate('/admin/portfolios'); // Redirect to home page
         }
         else {
             let errorMsg = ""
-            jsonResponse.errors.map(error => {
+            jsonResponse.errors.forEach(error => {
                 errorMsg += error.msg + "\n";
             });
             showAlert(errorMsg, 'error');

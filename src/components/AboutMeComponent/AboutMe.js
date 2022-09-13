@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import aboutmeImg from '../../images/aboutme-img.png'
 import './AboutMe.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFreeCodeCamp, faGithub, faStackOverflow } from '@fortawesome/free-brands-svg-icons'
 
-export const AboutMe = () => {
+export const AboutMe = (props) => {
     // Get age
     const today = new Date();
     const DOB = new Date(2005, 10, 18);
     const yearDiff = today.getFullYear() - DOB.getFullYear();
     const monthDiff = today.getMonth() - DOB.getMonth();
     const age = yearDiff + (monthDiff<0 ? -1 : 0);
+
+    useEffect(() => {props.setLoadingBarProgress(100)}, []);
 
     return (
         <section className='about-section'>

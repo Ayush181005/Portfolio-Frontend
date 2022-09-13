@@ -1,11 +1,18 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Certificate.css'
 import { Card } from '../CardComponent/Card'
 import CertificateContext from '../../context/certificates/CertificateContext'
+import { Spinner } from '../SpinnerComponent/Spinner'
 
-export const Certificate = () => {
+export const Certificate = (props) => {
+    const [loading, setLoading] = useState(true);
     const { certificates, getCertificates } = useContext(CertificateContext);
-    useEffect(() => { getCertificates() }, []); // Get certificates on mount
+    const { setLoadingBarProgress } = props;
+    useEffect(() => {
+        setLoadingBarProgress(50);
+        getCertificates()
+        .then(()=>{setLoadingBarProgress(100);setLoading(false);});
+    }, []); // Get certificates on mount
 
     // Add all the unique years of certificates to an array
     const allCertificateYears = [];
@@ -20,7 +27,8 @@ export const Certificate = () => {
         <section className="certificates-section">
             <div className="certificates-container">
                 <h1>Certificates</h1>
-                {certificates.length > 0 ? allCertificateYears.map((year, i) => {
+                {loading && <Spinner />}
+                {!loading && certificates.length>0 ? allCertificateYears.map((year, i) => {
                     return (
                         <div key={i}>
                             {year ? <h2 className="text-certificate-year">{year}</h2> : <h2 className="text-certificate-year">Other</h2>}
@@ -34,7 +42,7 @@ export const Certificate = () => {
                             })}
                         </div>
                     )
-                }) : <h2>No certificates found</h2>}
+                }) : <h2>{!loading && 'No certificates found'}</h2>}
             </div>
         </section>
     )

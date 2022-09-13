@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './ContactUs.css';
 import { Link } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -6,7 +6,9 @@ import ReCAPTCHA from 'react-google-recaptcha';
 export const ContactUs = (props) => {
   const host = process.env.REACT_APP_SERVER_HOST;
   const port = process.env.REACT_APP_SERVER_PORT;
-  const { showAlert } = props;
+  const { showAlert, setLoadingBarProgress } = props;
+
+  useEffect(() => {props.setLoadingBarProgress(100)}, []);
 
   const recaptchaRef = useRef();
 
@@ -15,9 +17,10 @@ export const ContactUs = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setLoadingBarProgress(0);
     const recaptchaToken = await recaptchaRef.current.executeAsync(); // Recaptcha token
     recaptchaRef.current.reset(); // Reset recaptcha to make it ready for another check
-
+    setLoadingBarProgress(20);
     const response = await fetch(`http://${host}:${port}/api/contacts/addcontact`, {
       method: 'POST',
       headers: {
@@ -25,6 +28,7 @@ export const ContactUs = (props) => {
       },
       body: JSON.stringify({...formData, recaptchaToken})
     });
+    setLoadingBarProgress(70);
     const jsonResponse = await response.json();
     if (jsonResponse.success) {
       document.querySelectorAll('input, textarea').forEach((element) => {element.value=''});
@@ -35,6 +39,7 @@ export const ContactUs = (props) => {
       jsonResponse.errors.map(error => errorMsg += error.msg + "\n");
       showAlert(errorMsg, 'error');
     }
+    setLoadingBarProgress(100);
   }
 
   const contactFormFocus = () => {

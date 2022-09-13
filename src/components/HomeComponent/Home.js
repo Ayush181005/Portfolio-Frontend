@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 import homeImg from '../../images/home-img.png'
 
-export const Home = () => {
+export const Home = (props) => {
+  useEffect(() => {props.setLoadingBarProgress(100)}, []);
+
   return (
     <section className="intro-section">
       <div className="intro-container">
