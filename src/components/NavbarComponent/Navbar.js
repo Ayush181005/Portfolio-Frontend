@@ -44,7 +44,8 @@ export const Navbar = (props) => {
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/about'?'active':''}`} to="/about">About Me</Link></li>
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/portfolio'?'active':''}`} to="/portfolio">Portfolio</Link></li>
             <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/certificates'?'active':''}`} to="/certificates">Certificates</Link></li>
-            <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/contact'?'active':''}`} to="/contact">Contact Me</Link></li>
+            {/* <li className='list-item'><Link className={`navbar-text right ${location.pathname==='/contact'?'active':''}`} to="/contact">Contact Me</Link></li> */}
+            <li className='list-item'><a className={`navbar-text right ${location.pathname==='/contact'?'active':''}`} href="/contact">Contact Me</a></li> {/* Temporary fix for contact page as recaptcha not loading after component change */}
             {userData.success && <li className='list-item'>
               <button className="btn navbar-btn" onClick={dropdownClick}>Hi {userData.user.name}&nbsp;<i className="arrow down"></i></button>
               <div className="dropdown hidden">
