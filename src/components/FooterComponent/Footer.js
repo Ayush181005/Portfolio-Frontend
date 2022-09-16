@@ -16,7 +16,7 @@ export const Footer = () => {
             <div className="footer-body">
                 <div className="row">
                     <div className="row-left">
-                        Copyright &copy; 2022 |
+                        Copyright &copy; {new Date().getFullYear()} |
                     </div>
                     <div className="row-right">
                         <a href='https://github.com/Ayush181005' className='footer-icon' target='_blank' rel="noreferrer noopener" title='Github'>
