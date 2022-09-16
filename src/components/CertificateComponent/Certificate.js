@@ -31,7 +31,7 @@ export const Certificate = (props) => {
                 {!loading && certificates.length>0 ? allCertificateYears.map((year, i) => {
                     return (
                         <div key={i}>
-                            {year ? <h2 className="text-certificate-year">{year}</h2> : <h2 className="text-certificate-year">Other</h2>}
+                            {year ? <h2 className="text-certificate-year">{year} <span className='badge'>Age: {year-2005} years</span></h2> : <h2 className="text-certificate-year">Other</h2>}
                             {certificates.map((certificate, i) => {
                                 if (certificate.year === year) {
                                     const base64String = btoa(new Uint8Array(certificate.img.data.data).reduce(function (data, byte) { return data + String.fromCharCode(byte); }, ''));

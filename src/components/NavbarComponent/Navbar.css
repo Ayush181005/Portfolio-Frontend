@@ -83,6 +83,7 @@
     animation-fill-mode: backwards;
 }
 
+/* Dropdown */
 .dropdown {
     position: relative;
 }
@@ -107,6 +108,23 @@
     padding: 10px 10px;
     cursor: pointer;
 }
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    margin-left:5px;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .btn:hover .arrow {
+    border-color: #fff;
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
 
 .dropdown-item:hover {
     background-color: #ddd;

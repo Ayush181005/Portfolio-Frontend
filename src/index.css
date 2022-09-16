@@ -64,19 +64,11 @@ code {
   padding: 5px 5px;
 }
 
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  margin-left:5px;
-  display: inline-block;
-  padding: 3px;
-}
-
-.btn:hover .arrow {
-  border-color: #fff;
-}
-
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+/* Grey background badge */
+.badge {
+  font-size: 10px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
 }

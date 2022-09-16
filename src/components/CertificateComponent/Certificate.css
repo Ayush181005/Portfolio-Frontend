@@ -12,4 +12,10 @@
 
 .text-certificate-year {
     margin-top: 20px;
+    cursor: default;
+}
+
+.text-certificate-year span {
+    display: inline-block;
+    vertical-align: middle;
 }
