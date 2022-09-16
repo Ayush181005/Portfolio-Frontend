@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.portfolioDetailSection {
+    padding: 50px 100px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+.portfolioImg{
+    margin-bottom: 40px;
+}
+
+.portfolioImg img {
+    border-radius: 5px;
+    width: 80%;
+}
+
+.portfolio-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.portfolio-desc {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.portfolio-links p {
+    text-align: left;
+    margin: 10px;
+}
+@media screen and (max-width: 720px) {
+    .portfolioDetailSection {
+        padding: 50px 20px;
+    }
+
+    .portfolioImg img {
+        width: 80%;
+    }
+
+    .portfolio-title {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 50px;
+    }
+}
