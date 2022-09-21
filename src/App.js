@@ -20,8 +20,7 @@ import CertificateState from './context/certificates/CertificateState';
 import LoadingBar from 'react-top-loading-bar';
 
 function App() {
-  const host = process.env.REACT_APP_SERVER_HOST;
-  const port = process.env.REACT_APP_SERVER_PORT;
+  const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
 
   // Alert functionality
   const [alert, setAlert] = useState(null);
@@ -38,7 +37,7 @@ function App() {
     if (!localStorage.getItem('auth-token')) {
       return;
     }
-    const response = await fetch(`http://${host}:${port}/api/auth/getuser`, {
+    const response = await fetch(`${baseURL}/api/auth/getuser`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

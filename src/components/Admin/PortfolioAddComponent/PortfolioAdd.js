@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 export const PortfolioAdd = (props) => {
-    const host = process.env.REACT_APP_SERVER_HOST;
-    const port = process.env.REACT_APP_SERVER_PORT;
+    const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
     const { showAlert } = props;
     const navigate = useNavigate();
 
@@ -19,7 +18,7 @@ export const PortfolioAdd = (props) => {
         }
         formData.append('image', e.target.image.files[0])
 
-        const response = await fetch(`http://${host}:${port}/api/portfolios/addportfolio`, {
+        const response = await fetch(`${baseURL}/api/portfolios/addportfolio`, {
             headers: {
                 'auth-token': localStorage.getItem('auth-token')
             },

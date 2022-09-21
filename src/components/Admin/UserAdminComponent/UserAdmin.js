@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 export const UserAdmin = (props) => {
     const { showAlert } = props;
 
-    const host = process.env.REACT_APP_SERVER_HOST;
-    const port = process.env.REACT_APP_SERVER_PORT;
+    const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
         (async () => {
-            const response = await fetch(`http://${host}:${port}/api/auth/getusers`, {
+            const response = await fetch(`${baseURL}/api/auth/getusers`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -23,7 +22,7 @@ export const UserAdmin = (props) => {
     }, []);
 
     const handleDelete = async (id) => {
-        const response = await fetch(`http://${host}:${port}/api/auth/deleteuser/${id}`, {
+        const response = await fetch(`${baseURL}/api/auth/deleteuser/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

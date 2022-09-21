@@ -15,21 +15,20 @@ const apiCall = async (url, method, requestBody) => {
 }
 
 const CertificateState = (props) => {
-    const host = process.env.REACT_APP_SERVER_HOST;
-    const port = process.env.REACT_APP_SERVER_PORT;
+    const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
     const [certificates, setCertificates] = useState([]); // Array of certificate objects
     // const [certificate, setCertificate] = useState({}); // single certificate object
 
     // Get All Certificates
     const getCertificates = async () => {
-        const url = `http://${host}:${port}/api/certificates/getcertificates`;
+        const url = `${baseURL}/api/certificates/getcertificates`;
         const jsonResponse = await apiCall(url, 'POST');
         setCertificates(jsonResponse);
     }
 
     // Add Certificate
     const addCertificate = async (certificateBody) => {
-        const url = `http://${host}:${port}/api/certificates/addcertificate`;
+        const url = `${baseURL}/api/certificates/addcertificate`;
         const jsonResponse = await apiCall(url, 'POST', certificateBody);
 
         if (!jsonResponse.success) return { error: jsonResponse.errors, success: false };
@@ -40,7 +39,7 @@ const CertificateState = (props) => {
 
     // Delete Certificate
     const deleteCertificate = async (id) => {
-        const url = `http://${host}:${port}/api/certificates/deletecertificate/${id}`;
+        const url = `${baseURL}/api/certificates/deletecertificate/${id}`;
         const jsonResponse = await apiCall(url, 'DELETE');
 
         if (!jsonResponse.success) return { error: jsonResponse.errors, success: false };

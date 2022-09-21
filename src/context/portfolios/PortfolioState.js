@@ -15,21 +15,20 @@ const apiCall = async (url, method, requestBody) => {
 }
 
 const PortfolioState = (props) => {
-    const host = process.env.REACT_APP_SERVER_HOST;
-    const port = process.env.REACT_APP_SERVER_PORT;
+    const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
     const [portfolios, setPortfolios] = useState([]); // Array of portfolio objects
     const [portfolio, setPortfolio] = useState({}); // single portfolio object
 
     // Get All Portfolios
     const getPortfolios = async () => {
-        const url = `http://${host}:${port}/api/portfolios/getportfolios`;
+        const url = `${baseURL}/api/portfolios/getportfolios`;
         const jsonResponse = await apiCall(url, 'POST');
         setPortfolios(jsonResponse);
     }
 
     // Get Portfolio from id
     const getPortfolioFromId = async (id) => {
-        const url = `http://${host}:${port}/api/portfolios/getportfoliofromid/${id}`;
+        const url = `${baseURL}/api/portfolios/getportfoliofromid/${id}`;
         const jsonResponse = await apiCall(url, 'GET');
         setPortfolio(jsonResponse);
         return(jsonResponse);
@@ -37,7 +36,7 @@ const PortfolioState = (props) => {
 
     // Get Portfolio from slug
     const getPortfolioFromSlug = async (slug) => {
-        const url = `http://${host}:${port}/api/portfolios/getportfolio/${slug}`;
+        const url = `${baseURL}/api/portfolios/getportfolio/${slug}`;
         const jsonResponse = await apiCall(url, 'GET');
         setPortfolio(jsonResponse);
         return jsonResponse;
@@ -46,7 +45,7 @@ const PortfolioState = (props) => {
     // Add Portfolio
     const addPortfolio = async (portfolioBody) => {
         // portfolio body is JSON object with title, desc, type, links and slug
-        const url = `http://${host}:${port}/api/portfolios/addportfolio`;
+        const url = `${baseURL}/api/portfolios/addportfolio`;
         const jsonResponse = await apiCall(url, 'POST', portfolioBody);
 
         if (!jsonResponse.success) return { error: jsonResponse.errors, success: false };
@@ -58,7 +57,7 @@ const PortfolioState = (props) => {
     // Update Portfolio
     const updatePortfolio = async (id, portfolioBody) => {
         // portfolio body is JSON object with title, desc, type, links or slug
-        const url = `http://${host}:${port}/api/portfolios/updateportfolio/${id}`;
+        const url = `${baseURL}/api/portfolios/updateportfolio/${id}`;
         const jsonResponse = await apiCall(url, 'PUT', portfolioBody);
 
         if (!jsonResponse.success) return { error: jsonResponse.errors, success: false };
@@ -76,7 +75,7 @@ const PortfolioState = (props) => {
 
     // Delete Portfolio
     const deletePortfolio = async (id) => {
-        const url = `http://${host}:${port}/api/portfolios/deleteportfolio/${id}`;
+        const url = `${baseURL}/api/portfolios/deleteportfolio/${id}`;
         const jsonResponse = await apiCall(url, 'DELETE');
 
         if (!jsonResponse.success) return { error: jsonResponse.errors, success: false };

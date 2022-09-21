@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 export const ContactAdmin = (props) => {
     const { showAlert } = props;
 
-    const host = process.env.REACT_APP_SERVER_HOST;
-    const port = process.env.REACT_APP_SERVER_PORT;
+    const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
     const [contacts, setContacts] = useState([]);
 
     useEffect(() => {
         (async () => {
-            const response = await fetch(`http://${host}:${port}/api/contacts/getcontacts`, {
+            const response = await fetch(`${baseURL}/api/contacts/getcontacts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -23,7 +22,7 @@ export const ContactAdmin = (props) => {
     }, []);
 
     const handleDelete = async (id) => {
-        const response = await fetch(`http://${host}:${port}/api/contacts/deletecontact/${id}`, {
+        const response = await fetch(`${baseURL}/api/contacts/deletecontact/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

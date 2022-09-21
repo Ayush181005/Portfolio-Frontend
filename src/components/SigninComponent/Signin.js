@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 export const Signin = (props) => {
-    const host = process.env.REACT_APP_SERVER_HOST;
-    const port = process.env.REACT_APP_SERVER_PORT;
+    const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
     const { showAlert } = props;
 
     const recaptchaRef = useRef();
@@ -29,7 +28,7 @@ export const Signin = (props) => {
         const recaptchaToken = await recaptchaRef.current.executeAsync(); // Recaptcha token
         recaptchaRef.current.reset(); // Reset recaptcha to make it ready for another check
 
-        const response = await fetch(`http://${host}:${port}/api/auth/login`, {
+        const response = await fetch(`${baseURL}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,7 +65,7 @@ export const Signin = (props) => {
             showAlert("Passwords do not match", "error");
             return;
         }
-        const response = await fetch(`http://${host}:${port}/api/auth/signup`, {
+        const response = await fetch(`${baseURL}/api/auth/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

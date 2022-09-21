@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 export const ContactUs = (props) => {
-  const host = process.env.REACT_APP_SERVER_HOST;
-  const port = process.env.REACT_APP_SERVER_PORT;
+  const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
   const { showAlert, setLoadingBarProgress } = props;
 
   useEffect(() => {props.setLoadingBarProgress(100)}, []);
@@ -21,7 +20,7 @@ export const ContactUs = (props) => {
     const recaptchaToken = await recaptchaRef.current.executeAsync(); // Recaptcha token
     recaptchaRef.current.reset(); // Reset recaptcha to make it ready for another check
     setLoadingBarProgress(20);
-    const response = await fetch(`http://${host}:${port}/api/contacts/addcontact`, {
+    const response = await fetch(`${baseURL}/api/contacts/addcontact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
