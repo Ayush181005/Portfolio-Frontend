@@ -23,11 +23,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prebuild": "react-snap",
-    "build": "react-scripts build",
-    "postbuild": "react-snap-sitemap --base-url=https://theayush.in/ --add-slash=true --change-frequency=daily"
+    "postbuild": "react-snap && react-snap-sitemap --base-url=https://theayush.in/ --add-slash=true --change-frequency=daily"
   },
   "eslintConfig": {
     "extends": [
