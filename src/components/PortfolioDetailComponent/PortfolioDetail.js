@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import PortfolioContext from '../../context/portfolios/PortfolioContext'
 import './PortfolioDetail.css'
 import { Spinner } from '../SpinnerComponent/Spinner'
+import { Helmet } from "react-helmet"
 
 export const PortfolioDetail = (props) => {
     const { slug } = useParams();
@@ -23,6 +24,12 @@ export const PortfolioDetail = (props) => {
 
     return (
         <section className='portfolioDetailSection'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{portfolio.title}</title>
+                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/portfolio/${portfolio.slug}`}/>
+                <meta name="description" content={portfolio.desc.slice(0, 100)}/>
+            </Helmet>
             { loading && <Spinner /> }
             { !loading && 
                 <>

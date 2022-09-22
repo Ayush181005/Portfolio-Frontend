@@ -3,6 +3,7 @@ import './Certificate.css'
 import { Card } from '../CardComponent/Card'
 import CertificateContext from '../../context/certificates/CertificateContext'
 import { Spinner } from '../SpinnerComponent/Spinner'
+import { Helmet } from "react-helmet"
 
 export const Certificate = (props) => {
     const [loading, setLoading] = useState(true);
@@ -25,6 +26,12 @@ export const Certificate = (props) => {
 
     return (
         <section className="certificates-section">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>My Certificates - Ayush</title>
+                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/certificates`}/>
+                <meta name="description" content="Certificates are just a piece of paper, here they are put up as a bunch of pixels, But their value is a lot. They are the proof of our success in certain fields, which obviously cannot be shown by only a bunch of pixels, but here they are."/>
+            </Helmet>
             <div className="certificates-container">
                 <h1>Certificates</h1>
                 {loading && <Spinner />}

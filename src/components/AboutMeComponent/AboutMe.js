@@ -3,6 +3,7 @@ import aboutmeImg from '../../images/aboutme-img.png'
 import './AboutMe.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFreeCodeCamp, faGithub, faStackOverflow } from '@fortawesome/free-brands-svg-icons'
+import {Helmet} from "react-helmet"
 
 export const AboutMe = (props) => {
     // Get age
@@ -16,6 +17,13 @@ export const AboutMe = (props) => {
 
     return (
         <section className='about-section'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>About Me - Ayush</title>
+                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/about`}/>
+                <meta name="description" content={`I am a student right now, and am ${age} years old. I am learning programming concepts, art, and am passionate about science.`} />
+            </Helmet>
+
             <h1>About Me!</h1>
             <p>
                 <img src={aboutmeImg} alt="Me" className='aboutme-image' />

@@ -13,3 +13,13 @@
 .text-portfolio-type {
     margin-top: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .portfolio-section {
+        padding: 50px 20px;
+    }
+
+    .portfolio-section .portfolio-container h1 {
+        font-size: 40px;
+    }
+}

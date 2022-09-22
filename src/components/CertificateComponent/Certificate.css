@@ -19,3 +19,13 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+@media screen and (max-width: 768px) {
+    .certificates-section {
+        padding: 50px 20px;
+    }
+
+    .certificates-section .certificates-container h1 {
+        font-size: 40px;
+    }
+}

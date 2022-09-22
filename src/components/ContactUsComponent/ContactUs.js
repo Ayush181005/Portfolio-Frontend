@@ -2,17 +2,18 @@ import React, { useState, useRef, useEffect } from 'react';
 import './ContactUs.css';
 import { Link } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { Helmet } from 'react-helmet';
 
 export const ContactUs = (props) => {
   const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
   const { showAlert, setLoadingBarProgress } = props;
 
-  useEffect(() => {props.setLoadingBarProgress(100)}, []);
+  useEffect(() => { props.setLoadingBarProgress(100) }, []);
 
   const recaptchaRef = useRef();
 
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const handleOnChange = (e) => {setFormData({ ...formData, [e.target.name]: e.target.value })};
+  const handleOnChange = (e) => { setFormData({ ...formData, [e.target.name]: e.target.value }) };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,12 +26,12 @@ export const ContactUs = (props) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({...formData, recaptchaToken})
+      body: JSON.stringify({ ...formData, recaptchaToken })
     });
     setLoadingBarProgress(70);
     const jsonResponse = await response.json();
     if (jsonResponse.success) {
-      document.querySelectorAll('input, textarea').forEach((element) => {element.value=''});
+      document.querySelectorAll('input, textarea').forEach((element) => { element.value = '' });
       showAlert('Contact Saved Successfully, I\'ll come back to you soon', 'success');
     }
     else {
@@ -47,6 +48,12 @@ export const ContactUs = (props) => {
 
   return (
     <section className="contact-section">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Contact Me - Ayush</title>
+        <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/contact`} />
+        <meta name="description" content="Please give your valuable message using the contact me form!" />
+      </Helmet>
       <div className="container">
         <div className="contactInfo">
           <div className="content">
