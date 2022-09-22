@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Signin.css';
 import { useNavigate } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { Helmet } from 'react-helmet';
 
 export const Signin = (props) => {
     const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
@@ -91,6 +92,12 @@ export const Signin = (props) => {
 
     return (
         <section className='loginSection'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Signin - Ayush</title>
+                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/signin`} />
+                <meta name="description" content="Signin page." />
+            </Helmet>
             <div className="main">
                 <input type="checkbox" id="chk" aria-hidden="true" />
                 <div className="signup">
