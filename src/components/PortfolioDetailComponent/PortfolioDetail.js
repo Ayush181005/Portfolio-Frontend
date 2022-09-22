@@ -32,6 +32,7 @@ export const PortfolioDetail = (props) => {
                         <title>{portfolio.title}</title>
                         <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/portfolio/${portfolio.slug}`}/>
                         <meta name="description" content={portfolio.desc.slice(0, 100)}/>
+                        <meta name="keywords" content={`${portfolio.title}, ${portfolio.slug}, ${portfolio.type}`}/>
                     </Helmet>
                     <div className="portfolio-title">
                         <h1>{portfolio.title}</h1>
