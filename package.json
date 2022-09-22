@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@alex-drocks/react-snap-sitemap": "^3.0.0",
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.4",
@@ -17,16 +16,14 @@
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "react-snap": "^1.23.0",
     "react-top-loading-bar": "^2.3.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set \"INLINE_RUNTIME_CHUNK=false\" && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postbuild": "react-snap && react-snap-sitemap --base-url=https://theayush.in/ --add-slash=true --change-frequency=daily"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
