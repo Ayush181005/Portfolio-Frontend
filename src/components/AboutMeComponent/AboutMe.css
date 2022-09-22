@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .about-section {
-    padding: 50px 100px;
+    padding: 50px 50px;
     font-family: 'Open Sans', sans-serif;
 }
 
 .about-section h1 {
     font-size: 50px;
-    margin-bottom: 50px;
+    margin: 0 0 50px 50px;
 }
 
 .aboutme-image {
     float: left;
-    margin: 0px 100px 0 0;
+    margin: 0px 50px 0 0;
     object-fit: cover;
     width: 300px;
+    transition: .1s; /*Only for a nice smooth effect when resizing window*/
 }
 
 .about-section p {
@@ -57,35 +58,27 @@
     color: #0a0a22;
 }
 
-@media all and (max-width: 940px) {
-    .aboutme-image {
-        width: 200px;
-        margin: 0 50px 0 0;
+@media screen and (max-width: 768px) {
+    .about-section {
+        padding: 50px 20px;
+    }
+
+    .about-section h1 {
+        font-size: 40px;
+        margin-left: 0;
     }
 }
 
 @media all and (max-width: 710px) {
-    .about-section {
-        padding: 50px;
-    }
     .aboutme-image {
         width: 150px;
     }
 }
 
-@media all and (max-width: 500px) {
-    .aboutme-image {
-        width: 100px;
-    }
-}
-
-@media all and (max-width: 370px) {
+@media all and (max-width: 450px) {
     .about-section {
-        padding: 30px;
+        padding: 50px 10px;
         text-align: center;
-    }
-    .about-section h1 {
-        font-size: 40px;
     }
 
     .aboutme-image {

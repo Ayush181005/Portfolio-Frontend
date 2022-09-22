@@ -153,7 +153,7 @@
 }
 
 
-@media all and (max-width: 850px) {
+@media all and (max-width: 930px) {
     .nav-list{
         display: block;
     }
