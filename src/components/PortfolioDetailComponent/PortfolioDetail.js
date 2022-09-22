@@ -24,15 +24,15 @@ export const PortfolioDetail = (props) => {
 
     return (
         <section className='portfolioDetailSection'>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>{portfolio.title}</title>
-                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/portfolio/${portfolio.slug}`}/>
-                <meta name="description" content={portfolio.desc.slice(0, 100)}/>
-            </Helmet>
             { loading && <Spinner /> }
             { !loading && 
                 <>
+                    <Helmet>
+                        <meta charSet="utf-8" />
+                        <title>{portfolio.title}</title>
+                        <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/portfolio/${portfolio.slug}`}/>
+                        <meta name="description" content={portfolio.desc.slice(0, 100)}/>
+                    </Helmet>
                     <div className="portfolio-title">
                         <h1>{portfolio.title}</h1>
                         <small className='badge'>{portfolio.type}</small>
