@@ -207,7 +207,10 @@
 
     .nav-logo-parent {
         width: 100%;
-        padding-left: 30px;
+    }
+
+    .nav-logo-parent img {
+        margin-left: 30px;
     }
 
     .nav-list-hidden {
