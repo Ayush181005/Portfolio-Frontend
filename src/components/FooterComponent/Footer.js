@@ -6,7 +6,6 @@ import { faYoutube, faGithub, faStackOverflow } from '@fortawesome/free-brands-s
 import { useLocation } from 'react-router-dom'
 
 export const Footer = () => {
-
     // Rurturn nothing if on login page to not show the navbar
     let location = useLocation();
     if (location.pathname === '/signin' || location.pathname.startsWith('/admin')) return;
