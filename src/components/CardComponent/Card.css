@@ -82,6 +82,12 @@ a .card {
 
 @media all and (max-width:849px){
     .card {
+        width: 44%;
+    }
+}
+
+@media all and (max-width:550px){
+    .card {
         width: 100%;
     }
 

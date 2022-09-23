@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import './Home.css';
-import homeImg from '../../images/home-img.png'
-import { Helmet } from "react-helmet"
+import homeImg from '../../images/home-img.png';
+import { Helmet } from "react-helmet";
+import LazyLoad from 'react-lazy-load';
 
 export const Home = (props) => {
   useEffect(() => { props.setLoadingBarProgress(100) }, []);
@@ -20,7 +21,11 @@ export const Home = (props) => {
           <small>With single 'A' 😅😁</small>
         </div>
         <div className="img-container">
-          <div className="img-container-2"><div className="img-container-3"><img src={homeImg} alt="Me" className='home-img' /></div></div>
+          <div className="img-container-2"><div className="img-container-3">
+            <LazyLoad>
+              <img src={homeImg} alt="Me" className='home-img' />
+            </LazyLoad>
+          </div></div>
         </div>
       </div>
     </section>
