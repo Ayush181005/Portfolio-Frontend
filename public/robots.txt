@@ -1,4 +1,12 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Allow: /
+Allow: /portfolio
+Allow: /about
+Allow: /contact
+Allow: /certificates
 Disallow: /admin/
 Disallow: /singin
+
+Host: theayush.in
+Sitemap: https://theayush.in/sitemap.xml
