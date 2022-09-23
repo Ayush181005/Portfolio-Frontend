@@ -22,7 +22,7 @@ export const Home = (props) => {
         </div>
         <div className="img-container">
           <div className="img-container-2"><div className="img-container-3">
-            <LazyLoad>
+            <LazyLoad height={298}>
               <img src={homeImg} alt="Me" className='home-img' />
             </LazyLoad>
           </div></div>
