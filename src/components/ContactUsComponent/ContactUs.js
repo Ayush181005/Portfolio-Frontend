@@ -60,12 +60,6 @@ export const ContactUs = (props) => {
             <h1>Contact Me</h1>
             <p className='contactme-text'>Not much to write here 😅 as most of the things are in the <Link to='/about' className='about-link'>About Me</Link> page. Feel free to <span onClick={contactFormFocus} className="focusFormBtn">contact me</span>!</p>
           </div>
-          {/* <div className="box">
-            <div className="text">
-              <small>Phone</small>
-              <p><a href="tel:+919426140218" className='contact-form-info-link'>+919426140218</a></p>
-            </div>
-          </div> */}
           <div className="box">
             <div className="text">
               <small>Email</small>

@@ -25,8 +25,8 @@ export const AboutMe = (props) => {
             </Helmet>
 
             <h1>About Me!</h1>
-            <p>
                 <img src={aboutmeImg} alt="Me" className='aboutme-image' />
+            <p>
                 Hi! I'm <b>Ayush</b>, studying in grade 12 and I am {age} years old. I am from Ahmedabad, Gujarat in India. I study in Anand Niketan School, Shilaj Campus. Currently, I am preapering for my JEE and other entrance exams which are for the universities and colleges in India. I am currently working on my portfolio website (this website) made on MERN stack. I am interested in programming, learning about new technologies and I have learnt a few programming languages also, I am also interested in Lawn Tennis, badminton, table tennis, and other outdoor games. And I love Art, this website is not only for programming stuff but also for all other activities I do. I also go to coaching classes for my preparation of JEE. I had left my coaching classes in 11th class because of too much load and I wanted to focus not only in studies but also the extracurricular activities, but then I joined it again to study hard. I also have interest in robotics (arduinos) and I also use raspberry pi for my projects. Currently, I do all these only as a hobby. I am most interested in Science and mainly physics is my favourite subject, not only as in the syllabus but also practically.
             </p>
             <p>
@@ -37,15 +37,15 @@ export const AboutMe = (props) => {
             </p>
 
             <div className="icon-container">
-                <a href="https://github.com/Ayush181005" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Ayush181005" target="_blank" rel="noopener noreferrer" aria-label="Github">
                     <FontAwesomeIcon icon={faGithub} className='aboutme-icon-github aboutme-icon' />
                 </a>
 
-                <a href="https://stackoverflow.com/users/15543100/ayush?tab=profile" target="_blank" rel="noopener noreferrer">
+                <a href="https://stackoverflow.com/users/15543100/ayush?tab=profile" target="_blank" rel="noopener noreferrer" aria-label="StackOverflow">
                     <FontAwesomeIcon icon={faStackOverflow} className='aboutme-icon-stackoverflow aboutme-icon' />
                 </a>
 
-                <a href="https://www.freecodecamp.org/Ayush181005" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.freecodecamp.org/Ayush181005" target="_blank" rel="noopener noreferrer" aria-label="FreeCodeCamp">
                     <FontAwesomeIcon icon={faFreeCodeCamp} className='aboutme-icon-freecodecamp aboutme-icon' />
                 </a>
             </div>
