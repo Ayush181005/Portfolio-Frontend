@@ -3,7 +3,7 @@ import aboutmeImg from '../../images/aboutme-img.png'
 import './AboutMe.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFreeCodeCamp, faGithub, faStackOverflow } from '@fortawesome/free-brands-svg-icons'
-import {Helmet} from "react-helmet"
+import { Helmet } from "react-helmet"
 
 export const AboutMe = (props) => {
     // Get age
@@ -11,29 +11,29 @@ export const AboutMe = (props) => {
     const DOB = new Date(2005, 10, 18);
     const yearDiff = today.getFullYear() - DOB.getFullYear();
     const monthDiff = today.getMonth() - DOB.getMonth();
-    const age = yearDiff + (monthDiff<0 ? -1 : 0);
+    const age = yearDiff + (monthDiff < 0 ? -1 : 0);
 
-    useEffect(() => {props.setLoadingBarProgress(100)}, []);
+    useEffect(() => { props.setLoadingBarProgress(100) }, []);
 
     return (
         <section className='about-section'>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>About Me - Ayush</title>
-                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/about`}/>
+                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/about`} />
                 <meta name="description" content={`I am a student right now, and am ${age} years old. I am learning programming concepts, art, and am passionate about science.`} />
             </Helmet>
 
             <h1>About Me!</h1>
-                <img src={aboutmeImg} alt="Me" className='aboutme-image' />
+            <img src={aboutmeImg} alt="Me" className='aboutme-image' />
             <p>
-                Hi! I'm <b>Ayush</b>, studying in grade 12 and I am {age} years old. I am from Ahmedabad, Gujarat in India. I study in Anand Niketan School, Shilaj Campus. Currently, I am preapering for my JEE and other entrance exams which are for the universities and colleges in India. I am currently working on my portfolio website (this website) made on MERN stack. I am interested in programming, learning about new technologies and I have learnt a few programming languages also, I am also interested in Lawn Tennis, badminton, table tennis, and other outdoor games. And I love Art, this website is not only for programming stuff but also for all other activities I do. I also go to coaching classes for my preparation of JEE. I had left my coaching classes in 11th class because of too much load and I wanted to focus not only in studies but also the extracurricular activities, but then I joined it again to study hard. I also have interest in robotics (arduinos) and I also use raspberry pi for my projects. Currently, I do all these only as a hobby. I am most interested in Science and mainly physics is my favourite subject, not only as in the syllabus but also practically.
+                Hi! I'm <b>Ayush</b>, studying in grade 12 and I am {age} years old. I am from Ahmedabad, Gujarat in India. I study in <a target='_blank' href='https://anandniketanshilaj.org/' rel='noreferrer noopener' title='ANSH'>Anand Niketan School, Shilaj Campus</a>. Currently, I am preparing for my JEE and other entrance exams which are for the universities and colleges in India. I am currently working on my portfolio website (this website) made on MERN stack. I am interested in programming, learning about new technologies and I have learnt a few programming languages also, I am also interested in Lawn Tennis, badminton, table tennis, and other outdoor games. And I love Art, this website is not only for programming stuff but also for all other activities I do will be there in the portfolio section. I also have interest in robotics (arduinos) and I also use raspberry pi for my projects. Currently, I do all these only as a hobby. The most interesting subject for me is Science and in that too Physics is my favourite subject.
             </p>
             <p>
-                I had no interest in Science and technology years back when I was in 6th when I joined the <a target='_blank' href='https://sciknowtech.com/' rel='noreferrer noopener' title='SciKnowTech'>SciKnowTech</a> classes which made me love science and where I learnt science practically, what we call is experiential learning. SciKnowTech's philosophy is 'exposure leads to exploration and exploration to innovation' and those exposures to different places like GUSEC, SciKnowTalks(expert sessions), field trips did help me in understanding my core concepts better. Also, in programming, I had no interest till Dhiraj Sir from <a href="https://royaltechnosoft.com/" target="_blank" rel="noopener noreferrer" title='Royal Technosoft'>Royal Technosoft Pvt. Ltd.</a> came to our school one fine day for a lecture about what exactly is programming and why should everyone learn atleast one programming language. Then I joined the short term and long term programmes of it and after completing most of the things there when learning python was still left and quarantine was going on, my friend's uncle gave me a link to freecodecamp's python tutorial and then I started learning advance concepts of programming from YouTube and other sources like that. Till now I am learning mostly everything from google and youtube.
+                My school teachers, especially in grade 11 and 12, Milan Sir, Hitesh Sir, Vinod Sir, John Sir and Jagdish Sir, and my Coaching classes teachers, Ravindra Sir, Vinod Sir, Prakash Sir and Saurabh Sir helped me to come back to track. Megha ma'am from <a target='_blank' href='https://sciknowtech.com/' rel='noreferrer noopener' title='SciKnowTech'>SciKnowTech</a> classes made me love science and where I went till grade 10 and learnt science practically, what we call experiential learning. SciKnowTech's philosophy is 'exposure leads to exploration and exploration to innovation' and those exposures to different places like GUSEC, SciKnowTalks(expert sessions), field trips did help me in understanding my core concepts better. Also, in programming, Dhiraj Sir from<a href="https://royaltechnosoft.com/" target="_blank" rel="noopener noreferrer" title='Royal Technosoft'>Royal Technosoft Pvt. Ltd.</a> help me develop interest in programming. Then, I learnt most of the programming and computer science from Google and Youtube.
             </p>
             <p>
-                I do things related to Computer Science just as a hobby and not decided to pursue it as my career. I also like Astronomy and AstroPhysics which I think to pursue after getting a good reputed college in India (which is honestly very difficult to get).
+                I have not decided what to do in future or what to pursue after 12th but I also like Astronomy and AstroPhysics which I think to pursue after getting a good reputed college in India (which is honestly very difficult to get).
             </p>
 
             <div className="icon-container">
