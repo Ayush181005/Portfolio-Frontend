@@ -93,10 +93,7 @@ export const Signin = (props) => {
     return (
         <section className='loginSection'>
             <Helmet>
-                <meta charSet="utf-8" />
-                <title>Signin - Ayush</title>
-                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/signin`} />
-                <meta name="description" content="Signin page." />
+                <title>Signin</title>
             </Helmet>
             <div className="main">
                 <input type="checkbox" id="chk" aria-hidden="true" />

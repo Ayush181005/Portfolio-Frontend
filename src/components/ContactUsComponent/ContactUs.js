@@ -46,13 +46,27 @@ export const ContactUs = (props) => {
     document.querySelector('form input').focus();
   }
 
+  const pageTitle = 'Contact Me - Ayush';
+  const pageDesc = 'Please give your valuable message using the contact me form!';
+
   return (
     <section className="contact-section">
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Contact Me - Ayush</title>
+        {/* Ganeral tags */}
+        <title>{pageTitle}</title>
         <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/contact`} />
-        <meta name="description" content="Please give your valuable message using the contact me form!" />
+        <meta name="description" content={pageDesc} />
+
+        {/* OpenGraph tags */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@Ayush181005" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
       </Helmet>
       <div className="container">
         <div className="contactInfo">

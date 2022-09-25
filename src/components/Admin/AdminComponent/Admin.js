@@ -42,10 +42,7 @@ export const Admin = (props) => {
   return (
     <>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Admin - Ayush</title>
-        <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/admin`} />
-        <meta name="description" content="Admin Panel." />
       </Helmet>
 
       <h1>Admin</h1>

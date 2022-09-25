@@ -7,13 +7,27 @@ import LazyLoad from 'react-lazy-load';
 export const Home = (props) => {
   useEffect(() => { props.setLoadingBarProgress(100) }, []);
 
+  const pageTitle = 'Its me - Ayush';
+  const pageDesc = 'Websites are a way to express the art and the skills of any programmer, developer or any other person, and so is this. Here, I have all my Certificates and my Portfoliosfor you, please have a look.';
+
   return (
     <section className="intro-section">
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Its me - Ayush</title>
+        {/* Ganeral tags */}
+        <title>{pageTitle}</title>
         <link rel="canonical" href={process.env.REACT_APP_DOMAIN_URL} />
-        <meta name="description" content="This is my portfolio website, I would be pleased if you explore the website." />
+        <meta name="description" content={pageDesc} />
+
+        {/* OpenGraph tags */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@Ayush181005" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
       </Helmet>
       <div className="intro-container">
         <div className="content">

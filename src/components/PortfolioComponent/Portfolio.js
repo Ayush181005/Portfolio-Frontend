@@ -25,13 +25,27 @@ export const Portfolio = (props) => {
     }
   });
 
+  const pageTitle = 'Portfolios - Ayush';
+  const pageDesc = 'All my work in various fields, for you to see and you can surely comment, or give feedback for anything in the contact me page.';
+
   return (
     <section className="portfolio-section">
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Portfolios - Ayush</title>
+        {/* Ganeral tags */}
+        <title>{pageTitle}</title>
         <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/portfolio`} />
-        <meta name="description" content="My Portfolios related to different fields." />
+        <meta name="description" content={pageDesc} />
+
+        {/* OpenGraph tags */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@Ayush181005" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
       </Helmet>
       <div className="portfolio-container">
         <h1>Portfolio</h1>

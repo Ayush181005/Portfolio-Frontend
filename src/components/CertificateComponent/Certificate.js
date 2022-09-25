@@ -24,13 +24,27 @@ export const Certificate = (props) => {
     })
     allCertificateYears.sort(); // Sort the array in ascending order
 
+    const pageTitle = 'My Certificates - Ayush';
+    const pageDesc = 'Certificates are just a piece of paper, here they are put up as a bunch of pixels, But their value is a lot. They are the proof of our success in certain fields, which obviously cannot be shown by only a bunch of pixels, but here they are.'
+
     return (
         <section className="certificates-section">
             <Helmet>
-                <meta charSet="utf-8" />
-                <title>My Certificates - Ayush</title>
-                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/certificates`}/>
-                <meta name="description" content="Certificates are just a piece of paper, here they are put up as a bunch of pixels, But their value is a lot. They are the proof of our success in certain fields, which obviously cannot be shown by only a bunch of pixels, but here they are."/>
+                {/* Ganeral tags */}
+                <title>{pageTitle}</title>
+                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/certificates`} />
+                <meta name="description" content={pageDesc} />
+
+                {/* OpenGraph tags */}
+                <meta property="og:title" content={pageTitle} />
+                <meta property="og:description" content={pageDesc} />
+                <meta property="og:type" content="website" />
+
+                {/* Twitter Card tags */}
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:creator" content="@Ayush181005" />
+                <meta name="twitter:title" content={pageTitle} />
+                <meta name="twitter:description" content={pageDesc} />
             </Helmet>
             <div className="certificates-container">
                 <h1>Certificates</h1>
