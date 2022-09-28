@@ -24,27 +24,27 @@ export const PortfolioDetail = (props) => {
 
     return (
         <section className='portfolioDetailSection'>
-            <Helmet>
-                {/* Ganeral tags */}
-                <title>{portfolio.title}</title>
-                <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/portfolio/${portfolio.slug}`} />
-                <meta name="description" content={portfolio.desc.slice(0, 100)} />
-                <meta name="keywords" content={`${portfolio.title}, ${portfolio.slug}, ${portfolio.type}`}/>
-
-                {/* OpenGraph tags */}
-                <meta property="og:title" content={portfolio.title} />
-                <meta property="og:description" content={portfolio.desc.slice(0, 100)} />
-                <meta property="og:type" content="website" />
-
-                {/* Twitter Card tags */}
-                <meta name="twitter:card" content="summary" />
-                <meta name="twitter:creator" content="@Ayush181005" />
-                <meta name="twitter:title" content={portfolio.title} />
-                <meta name="twitter:description" content={portfolio.desc.slice(0, 100)} />
-            </Helmet>
             { loading && <Spinner /> }
             { !loading && 
                 <>
+                    <Helmet>
+                        {/* Ganeral tags */}
+                        <title>{portfolio.title}</title>
+                        <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/portfolio/${portfolio.slug}`} />
+                        <meta name="description" content={portfolio.desc.slice(0, 100)} />
+                        <meta name="keywords" content={`${portfolio.title}, ${portfolio.slug}, ${portfolio.type}`}/>
+
+                        {/* OpenGraph tags */}
+                        <meta property="og:title" content={portfolio.title} />
+                        <meta property="og:description" content={portfolio.desc.slice(0, 100)} />
+                        <meta property="og:type" content="website" />
+
+                        {/* Twitter Card tags */}
+                        <meta name="twitter:card" content="summary" />
+                        <meta name="twitter:creator" content="@Ayush181005" />
+                        <meta name="twitter:title" content={portfolio.title} />
+                        <meta name="twitter:description" content={portfolio.desc.slice(0, 100)} />
+                    </Helmet>
                     <div className="portfolio-title">
                         <h1>{portfolio.title}</h1>
                         <small className='badge'>{portfolio.type}</small>
