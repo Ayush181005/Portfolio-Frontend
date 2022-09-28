@@ -66,6 +66,16 @@ a .card {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+@media (hover: none) {
+    .card img {
+        filter: brightness(30%) !important;
+    }
+
+    .card .card-text {
+        visibility: visible;
+    }
+}
+
 @media all and (max-width:1335px){
     .card {
         width: 45%;
