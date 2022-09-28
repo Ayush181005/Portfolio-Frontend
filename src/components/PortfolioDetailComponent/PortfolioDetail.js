@@ -29,7 +29,7 @@ export const PortfolioDetail = (props) => {
                 <>
                     <Helmet>
                         {/* Ganeral tags */}
-                        <title>{portfolio.title}</title>
+                        <title>{portfolio.title} - Ayush</title>
                         <link rel="canonical" href={`${process.env.REACT_APP_DOMAIN_URL}/portfolio/${portfolio.slug}`} />
                         <meta name="description" content={portfolio.desc.slice(0, 100)} />
                         <meta name="keywords" content={`${portfolio.title}, ${portfolio.slug}, ${portfolio.type}`}/>
