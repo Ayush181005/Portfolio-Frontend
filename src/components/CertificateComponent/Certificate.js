@@ -57,7 +57,7 @@ export const Certificate = (props) => {
                                 if (certificate.year === year) {
                                     const base64String = btoa(new Uint8Array(certificate.img.data.data).reduce(function (data, byte) { return data + String.fromCharCode(byte); }, ''));
                                     return(
-                                        <Card key={i} text={certificate.compName} extraInfo={certificate.field} img_url={`data:image/png;base64,${base64String}`} />
+                                        <Card key={i} text={certificate.compName} extraInfo={certificate.field} img_url={`data:image/png;base64,${base64String}`} showImg={true} />
                                     )
                                 }
                             })}

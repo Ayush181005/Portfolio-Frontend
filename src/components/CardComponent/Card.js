@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Card.css';
 import LazyLoad from 'react-lazy-load';
+import GeneralContext from '../../context/general/GeneralContext';
 
 export const Card = (props) => {
-  let { text, img_url, extraInfo } = props;
+  let { text, img_url, extraInfo, showImg } = props;
+  const {setImgViewerDisplay, setImgViewerURL} = useContext(GeneralContext);
+
+  const onClick = () => {if (showImg) {
+    setImgViewerDisplay(true);
+    setImgViewerURL(img_url);
+  }}
+
   return (
-    <div className={`card ${!extraInfo && 'bottomRounded'}`}>
+    <div className={`card ${!extraInfo && 'bottomRounded'}`} onClick={onClick}>
       <LazyLoad height={200} offset={300}>
         <img src={img_url} alt="Card item img" />
       </LazyLoad>

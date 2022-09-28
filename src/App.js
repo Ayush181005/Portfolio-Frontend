@@ -10,6 +10,7 @@ import { Signin } from './components/SigninComponent/Signin';
 import { Alert } from './components/AlertComponent/Alert';
 import { Admin } from './components/Admin/AdminComponent/Admin';
 import { Certificate } from './components/CertificateComponent/Certificate';
+import { ImgDisplay } from './components/ImgDisplayComponent/ImgDisplay';
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,6 +18,7 @@ import {
 } from 'react-router-dom';
 import PortfolioState from './context/portfolios/PortfolioState';
 import CertificateState from './context/certificates/CertificateState';
+import GeneralState from './context/general/GeneralState'
 import LoadingBar from 'react-top-loading-bar';
 
 function App() {
@@ -53,7 +55,7 @@ function App() {
   const [loadingBarProgress, setLoadingBarProgress] = useState(0);
 
   return (
-    <PortfolioState><CertificateState> {/* Context API */}
+    <PortfolioState><CertificateState><GeneralState> {/* Context API */}
       <Router>
         <LoadingBar
           color='#333'
@@ -93,13 +95,15 @@ function App() {
               <Admin showAlert={showAlert} getUserData={getUserData} userData={userData} />
             } />
           </Routes>
+
+          <ImgDisplay />
         </main>
 
         {alert && <Alert alert={alert} />}
 
         <Footer />
       </Router>
-    </CertificateState></PortfolioState>
+    </GeneralState></CertificateState></PortfolioState>
   );
 }
 
