@@ -9,7 +9,7 @@ export const ImgDisplay = (props) => {
   return (
     <>
     {imgViewerDisplay &&
-      <div class="image-viewer-container">
+      <div className="image-viewer-container">
         <img src={imgViewerURL} alt="Viewer" />
         <button className="btn btn-sm" onClick={onClose}>Close</button>
       </div>
