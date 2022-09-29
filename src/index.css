@@ -1,6 +1,10 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+
+  /* Highlight color */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 body {
@@ -14,7 +18,8 @@ code {
 
 
 /* Selection */
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: white;
   background: #333;
 }
@@ -47,12 +52,12 @@ code {
 
 /* Button */
 .btn {
-    background-color: #ddd;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 10px 10px;
-    border-radius: 2px;
+  background-color: #ddd;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 2px;
 }
 
 .btn:hover {
