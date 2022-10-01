@@ -8,7 +8,7 @@ export const PortfolioEdit = (props) => {
     const { id } = useParams();
     const { updatePortfolio, getPortfolioFromId } = useContext(PortfolioContext);
 
-    const [portfolioData, setPortfolioData] = useState({title:'', desc:'', type:'', links:'', slug:''});
+    const [portfolioData, setPortfolioData] = useState({title:'', desc:'', type:'', githubLink:'', websiteLink:'', slug:''});
 
     useEffect(() => {
         (async () => {
@@ -56,9 +56,12 @@ export const PortfolioEdit = (props) => {
                     <input type="text" name='slug' id='form-slug' placeholder='Slug of the Portfolio' onChange={handleOnChange} value={portfolioData.slug} />
                 </div>
                 <div className="inputBox">
-                    <label htmlFor="form-links">Links</label>
-                    <input type="text" name='links' id='form-links' placeholder='Links needed in Portfolio' onChange={handleOnChange} value={portfolioData.links} />
-                    <small>Seperate by comma and space ', '</small>
+                    <label htmlFor="form-github-link">Github Link</label>
+                    <input type="text" name='githubLink' id='form-github-link' placeholder='Github Repo link' onChange={handleOnChange} value={portfolioData.githubLink} />
+                </div>
+                <div className="inputBox">
+                    <label htmlFor="form-website-link">Website Link</label>
+                    <input type="text" name='websiteLink' id='form-website-link' placeholder='Direct link to project' onChange={handleOnChange} value={portfolioData.websiteLink} />
                 </div>
                 <div className="inputBox">
                     <label htmlFor="form-desc">Description</label>

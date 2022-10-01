@@ -44,7 +44,7 @@ const PortfolioState = (props) => {
 
     // Add Portfolio
     const addPortfolio = async (portfolioBody) => {
-        // portfolio body is JSON object with title, desc, type, links and slug
+        // portfolio body is JSON object with title, desc, type, githubLink, websiteLink and slug
         const url = `${baseURL}/api/portfolios/addportfolio`;
         const jsonResponse = await apiCall(url, 'POST', portfolioBody);
 
@@ -56,7 +56,7 @@ const PortfolioState = (props) => {
 
     // Update Portfolio
     const updatePortfolio = async (id, portfolioBody) => {
-        // portfolio body is JSON object with title, desc, type, links or slug
+        // portfolio body is JSON object with title, desc, type, githubLink, websiteLink or slug
         const url = `${baseURL}/api/portfolios/updateportfolio/${id}`;
         const jsonResponse = await apiCall(url, 'PUT', portfolioBody);
 

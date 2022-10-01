@@ -57,9 +57,12 @@ export const PortfolioAdd = (props) => {
                     <input onChange={handleOnChange} type="text" name='slug' id='form-slug' placeholder='Slug of the Portfolio' />
                 </div>
                 <div className="inputBox">
-                    <label htmlFor="form-links">Links</label>
-                    <input onChange={handleOnChange} type="text" name='links' id='form-links' placeholder='Links needed in Portfolio' />
-                    <small>Seperate by comma and space ', '</small>
+                    <label htmlFor="form-github-link">Github Link</label>
+                    <input onChange={handleOnChange} type="text" name='githubLink' id='form-github-link' placeholder='github Repo Link' />
+                </div>
+                <div className="inputBox">
+                    <label htmlFor="form-website-link">Website Link</label>
+                    <input onChange={handleOnChange} type="text" name='websiteLink' id='form-website-link' placeholder='Direct link to project' />
                 </div>
                 <div className="inputBox">
                     <label htmlFor="form-image">Image</label>

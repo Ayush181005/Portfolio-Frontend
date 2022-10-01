@@ -56,9 +56,8 @@ export const PortfolioDetail = (props) => {
                         <p dangerouslySetInnerHTML={{__html: portfolio.desc}}></p>
                     </div>
                     <div className="portfolio-links">
-                        {portfolio.links && portfolio.links.split(', ').map((link, index) => {
-                            return <p key={index}><a href={link} target='_blank' rel="noreferrer noopener">{link}</a></p>
-                        })}
+                        {portfolio.githubLink}
+                        {portfolio.websiteLink}
                     </div>
                 </>
             }
