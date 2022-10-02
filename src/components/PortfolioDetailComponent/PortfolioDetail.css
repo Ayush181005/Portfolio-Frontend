@@ -3,9 +3,10 @@
 .portfolioDetailSection {
     padding: 50px 100px;
     font-family: 'Open Sans', sans-serif;
-    text-align: center;
 }
+
 .portfolioImg{
+    text-align: center;
     margin-bottom: 40px;
 }
 
@@ -18,18 +19,35 @@
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 50px;
+    text-align: center;
 }
 
 .portfolio-desc {
-    font-size: 20px;
-    font-weight: 400;
     margin-bottom: 50px;
+    padding: 10px;
 }
 
-.portfolio-links p {
-    text-align: left;
-    margin: 10px;
+.portfolio-links {
+    text-align: center;
 }
+
+.portfolio-detail-icon {
+    margin: 0 20px;
+    font-size: 50px;
+}
+
+.portfolio-detail-icon:hover {
+    transform: scale(1.1);
+}
+
+.portfolio-detail-icon-github {
+    color: #211F1F;
+}
+
+.portfolio-detail-icon-website {
+    color: #333;
+}
+
 @media screen and (max-width: 720px) {
     .portfolioDetailSection {
         padding: 50px 20px;
@@ -43,6 +61,11 @@
         font-size: 30px;
         font-weight: 600;
         margin-bottom: 50px;
+    }
+
+    .portfolio-detail-icon {
+        font-size: 30px;
+        margin: 0px 10px;
     }
 }
 @media screen and (max-width: 580px) {
