@@ -27,7 +27,9 @@ export const PortfolioDetail = (props) => {
 
     return (
         <section className='portfolioDetailSection'>
-            { loading && <Spinner /> }
+            {loading && <span className="portfolio-detail-spinner">
+                <Spinner />
+            </span>}
             { !loading && 
                 <>
                     <Helmet>

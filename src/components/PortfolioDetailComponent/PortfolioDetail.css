@@ -5,6 +5,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.portfolio-detail-spinner {
+    text-align: center;
+}
+
 .portfolioImg{
     text-align: center;
     margin-bottom: 40px;
