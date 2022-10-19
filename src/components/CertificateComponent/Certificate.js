@@ -23,6 +23,7 @@ export const Certificate = (props) => {
         }
     })
     allCertificateYears.sort(); // Sort the array in ascending order
+    allCertificateYears.reverse(); // Sort the array in descending order
 
     const pageTitle = 'My Certificates - Ayush';
     const pageDesc = 'Certificates are just a piece of paper, here they are put up as a bunch of pixels, But their value is a lot. They are the proof of our success in certain fields, which obviously cannot be shown by only a bunch of pixels, but here they are.'
