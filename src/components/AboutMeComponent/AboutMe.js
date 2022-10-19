@@ -10,7 +10,7 @@ export const AboutMe = (props) => {
     const today = new Date();
     const DOB = new Date(2005, 10, 18);
     const yearDiff = today.getFullYear() - DOB.getFullYear();
-    const monthDiff = today.getMonth() - DOB.getMonth();
+    const monthDiff = (today.getMonth()+1) - DOB.getMonth();
     const age = yearDiff + (monthDiff < 0 ? -1 : 0);
 
     useEffect(() => { props.setLoadingBarProgress(100) }, []);
