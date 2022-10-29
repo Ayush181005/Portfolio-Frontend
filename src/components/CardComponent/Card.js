@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import './Card.css';
 import LazyLoad from 'react-lazy-load';
 import GeneralContext from '../../context/general/GeneralContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRibbon } from '@fortawesome/free-solid-svg-icons';
 
 export const Card = (props) => {
-  let { text, img_url, extraInfo, showImg } = props;
+  let { text, img_url, extraInfo, showImg, badgeIcon } = props;
   const {setImgViewerDisplay, setImgViewerURL} = useContext(GeneralContext);
 
   const onClick = () => {if (showImg) {
@@ -14,6 +16,9 @@ export const Card = (props) => {
 
   return (
     <div className="card" onClick={onClick}>
+      {badgeIcon && <span className="card-badge-icon" title="Special">
+        <FontAwesomeIcon icon={faRibbon}/>
+      </span>}
       {text && <div className="card-text">{text}</div>}
       <LazyLoad height={200} offset={300}>
         <img src={img_url} alt="Card item img" />

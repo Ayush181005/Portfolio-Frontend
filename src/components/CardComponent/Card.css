@@ -39,6 +39,24 @@ a .card {
     border-radius: 0 0 5px 5px;
 }
 
+.card-badge-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: #8a8a8a1e 1px solid;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #183153;
+    box-shadow: inset 0 5px 5px 5px #3333331e;
+}
+
 .card:hover {
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);

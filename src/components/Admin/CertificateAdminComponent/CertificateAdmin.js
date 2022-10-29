@@ -35,6 +35,7 @@ export const CertificateAdmin = (props) => {
                         <th>Competition Name</th>
                         <th>Year</th>
                         <th>Field</th>
+                        <th>Winner</th>
                         <th>Actions</th>
                     </tr>
                     {certificates.map((certificate, i) => {
@@ -43,6 +44,7 @@ export const CertificateAdmin = (props) => {
                                 <td>{certificate.compName}</td>
                                 <td>{certificate.year}</td>
                                 <td>{certificate.field}</td>
+                                <td>{certificate.winner?"Yes":"No"}</td>
                                 <td><button className="btn btn-sm" onClick={()=>{handleDelete(certificate._id)}}>Delete</button></td>
                             </tr>
                         )

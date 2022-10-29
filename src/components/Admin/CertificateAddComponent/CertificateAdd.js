@@ -60,6 +60,10 @@ export const CertificateAdd = (props) => {
                     <label htmlFor="form-image">Image</label>
                     <input onChange={handleOnChange} type="file" accept="image/*" name='image' id='form-image' required/>
                 </div>
+                <div className="inputBox">
+                    <label htmlFor="form-winner-check">Winner?</label>
+                    <input onChange={handleOnChange} type="number" min={0} max={1} id="form-winner-check" name="winner" />
+                </div>
                 <button type="submit" className='btn submit-btn'>Save</button>
             </form>
         </section>
