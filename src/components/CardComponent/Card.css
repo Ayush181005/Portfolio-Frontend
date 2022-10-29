@@ -64,11 +64,7 @@ a .card {
 
 @media all and (max-width:1335px){
     .card {
-        width: 45%;
-    }
-    
-    .card img {
-        max-height: 200px;
+        width: 28%;
     }
 
     .card-text {
@@ -96,12 +92,7 @@ a .card {
 
 @media all and (max-width:550px){
     .card {
-        width: 100%;
-    }
-
-
-    .card img {
-        width: 100%;
+        width: 90%;
         max-height: 300px;
         height: 100%;
     }
