@@ -13,11 +13,11 @@ export const Card = (props) => {
   }}
 
   return (
-    <div className={`card ${!extraInfo && 'bottomRounded'}`} onClick={onClick}>
+    <div className="card" onClick={onClick}>
+      {text && <div className="card-text">{text}</div>}
       <LazyLoad height={200} offset={300}>
         <img src={img_url} alt="Card item img" />
       </LazyLoad>
-      {text && <div className="card-text">{text}</div>}
       {extraInfo && <div className="card-extra-info">{extraInfo}</div>}
     </div>
   )
