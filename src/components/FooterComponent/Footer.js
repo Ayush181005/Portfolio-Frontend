@@ -2,7 +2,6 @@ import React from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faYoutube, faGithub, faStackOverflow } from '@fortawesome/free-brands-svg-icons'
 import { useLocation } from 'react-router-dom'
 
 export const Footer = () => {
@@ -19,19 +18,19 @@ export const Footer = () => {
                     </div>
                     <div className="row-right">
                         <a href='https://github.com/Ayush181005' className='footer-icon' target='_blank' rel="noreferrer noopener" title='Github'>
-                            <FontAwesomeIcon icon={faGithub} className='footer-icon-github' />
+                            <FontAwesomeIcon icon="fa-brands fa-github" style={{color:'#211F1F'}} />
                             &nbsp;
                             <span className="text">Github</span>
                         </a>
 
                         <a href='https://stackoverflow.com/users/15543100/ayush?tab=profile' className='footer-icon' target='_blank' rel="noreferrer noopener" title='StackOverflow'>
-                            <FontAwesomeIcon icon={faStackOverflow} className='footer-icon-stackoverflow' />
+                            <FontAwesomeIcon icon="fa-brands fa-stack-overflow" style={{color:'#EF8236'}} />
                             &nbsp;
                             <span className="text">StackOverflow</span>
                         </a>
 
                         <a href='https://www.youtube.com/channel/UCwTq8nmeVXyBn9sZcK3uNhg?sub_confirmation=1' className='footer-icon' target='_blank' rel="noreferrer noopener" title='Youtube'>
-                            <FontAwesomeIcon icon={faYoutube} className='footer-icon-youtube' />
+                            <FontAwesomeIcon icon="fa-brands fa-youtube" style={{color:'#FF0000'}} />
                             &nbsp;
                             <span className="text">Youtube</span>
                         </a>

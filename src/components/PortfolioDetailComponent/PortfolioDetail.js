@@ -5,8 +5,6 @@ import './PortfolioDetail.css'
 import { Spinner } from '../SpinnerComponent/Spinner'
 import { Helmet } from "react-helmet"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faLink } from '@fortawesome/free-solid-svg-icons'
 
 export const PortfolioDetail = (props) => {
     const { slug } = useParams();
@@ -63,11 +61,11 @@ export const PortfolioDetail = (props) => {
                     <div className="portfolio-links">
                         {portfolio.githubLink &&
                         <a href={portfolio.githubLink} target='_blank' rel="noreferrer noopener" >
-                            <FontAwesomeIcon icon={faGithub} className="portfolio-detail-icon portfolio-detail-icon-github" />
+                            <FontAwesomeIcon icon="fa-brands fa-github" className="portfolio-detail-icon"  style={{color:'#211F1F'}} />
                         </a>}
                         {portfolio.websiteLink &&
                         <a href={portfolio.websiteLink} target='_blank' rel="noreferrer noopener" >
-                            <FontAwesomeIcon icon={faLink} className="portfolio-detail-icon portfolio-detail-icon-website" />
+                            <FontAwesomeIcon icon="fa-solid fa-link" className="portfolio-detail-icon" style={{color:'#333'}} />
                         </a>}
                     </div>
                 </>

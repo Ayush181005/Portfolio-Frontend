@@ -3,7 +3,6 @@ import './Card.css';
 import LazyLoad from 'react-lazy-load';
 import GeneralContext from '../../context/general/GeneralContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRibbon } from '@fortawesome/free-solid-svg-icons';
 
 export const Card = (props) => {
   let { text, img_url, extraInfo, showImg, badgeIcon } = props;
@@ -17,7 +16,7 @@ export const Card = (props) => {
   return (
     <div className="card" onClick={onClick}>
       {badgeIcon && <span className="card-badge-icon" title="Special">
-        <FontAwesomeIcon icon={faRibbon}/>
+        <FontAwesomeIcon icon="fa-solid fa-medal"/>
       </span>}
       {text && <div className="card-text">{text}</div>}
       <LazyLoad height={200} offset={300}>

@@ -44,14 +44,6 @@
     transform: scale(1.1);
 }
 
-.portfolio-detail-icon-github {
-    color: #211F1F;
-}
-
-.portfolio-detail-icon-website {
-    color: #333;
-}
-
 @media screen and (max-width: 720px) {
     .portfolioDetailSection {
         padding: 50px 20px;

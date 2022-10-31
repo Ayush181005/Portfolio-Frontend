@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import aboutmeImg from '../../images/aboutme-img.png'
 import './AboutMe.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFreeCodeCamp, faGithub, faStackOverflow } from '@fortawesome/free-brands-svg-icons'
 import { Helmet } from "react-helmet"
 
 export const AboutMe = (props) => {
@@ -52,15 +51,15 @@ export const AboutMe = (props) => {
 
             <div className="icon-container">
                 <a href="https://github.com/Ayush181005" target="_blank" rel="noopener noreferrer" aria-label="Github">
-                    <FontAwesomeIcon icon={faGithub} className='aboutme-icon-github aboutme-icon' />
+                    <FontAwesomeIcon icon="fa-brands fa-github" className='aboutme-icon' style={{color:'#211F1F'}} />
                 </a>
 
                 <a href="https://stackoverflow.com/users/15543100/ayush?tab=profile" target="_blank" rel="noopener noreferrer" aria-label="StackOverflow">
-                    <FontAwesomeIcon icon={faStackOverflow} className='aboutme-icon-stackoverflow aboutme-icon' />
+                    <FontAwesomeIcon icon="fa-brands fa-stack-overflow" className='aboutme-icon' style={{color:'#EF8236'}} />
                 </a>
 
                 <a href="https://www.freecodecamp.org/Ayush181005" target="_blank" rel="noopener noreferrer" aria-label="FreeCodeCamp">
-                    <FontAwesomeIcon icon={faFreeCodeCamp} className='aboutme-icon-freecodecamp aboutme-icon' />
+                    <FontAwesomeIcon icon="fa-brands fa-free-code-camp" className='aboutme-icon' style={{color:'#0a0a22'}} />
                 </a>
             </div>
         </section>

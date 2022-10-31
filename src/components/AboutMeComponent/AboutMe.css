@@ -46,18 +46,6 @@
     transform: scale(1.1);
 }
 
-.aboutme-icon-github {
-    color: #211F1F;
-}
-
-.aboutme-icon-stackoverflow {
-    color: #EF8236;
-}
-
-.aboutme-icon-freecodecamp {
-    color: #0a0a22;
-}
-
 @media screen and (max-width: 768px) {
     .about-section {
         padding: 50px 20px;

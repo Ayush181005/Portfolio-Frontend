@@ -20,9 +20,16 @@ import PortfolioState from './context/portfolios/PortfolioState';
 import CertificateState from './context/certificates/CertificateState';
 import GeneralState from './context/general/GeneralState'
 import LoadingBar from 'react-top-loading-bar';
+// Fontawesome icons:-
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMedal, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faFreeCodeCamp, faGithub, faStackOverflow, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
   const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
+
+  // Adding fontawesome icons to the library to use in other components
+  library.add(faMedal, faFreeCodeCamp, faGithub, faStackOverflow, faYoutube, faLink);
 
   // Alert functionality
   const [alert, setAlert] = useState(null);
