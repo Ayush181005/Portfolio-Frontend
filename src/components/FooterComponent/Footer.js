@@ -29,7 +29,7 @@ export const Footer = () => {
                             <span className="text">StackOverflow</span>
                         </a>
 
-                        <a href='https://www.youtube.com/channel/UCwTq8nmeVXyBn9sZcK3uNhg?sub_confirmation=1' className='footer-icon' target='_blank' rel="noreferrer noopener" title='Youtube'>
+                        <a href='https://www.youtube.com/@theayush18?sub_confirmation=1' className='footer-icon' target='_blank' rel="noreferrer noopener" title='Youtube'>
                             <FontAwesomeIcon icon="fa-brands fa-youtube" style={{color:'#FF0000'}} />
                             &nbsp;
                             <span className="text">Youtube</span>
