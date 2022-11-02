@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Editor } from '@tinymce/tinymce-react';
+import './PortfolioAdd.css';
 
 export const PortfolioAdd = (props) => {
     const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
@@ -39,6 +41,15 @@ export const PortfolioAdd = (props) => {
         }
     }
 
+    const editorRef = useRef(null);
+    const editorCopy = () => {
+        if (editorRef.current) {
+            document.getElementById('form-desc').value = editorRef.current.getContent();
+        }
+    };
+    const onEditorClose = () => {document.getElementById('editor').style.display='none';}
+    const onEditorOpen = () => {document.getElementById('editor').style.display='block';}
+
     return (
         <section className='portfolio-add-section'>
             <h1>Add a Portfolio</h1>
@@ -68,12 +79,42 @@ export const PortfolioAdd = (props) => {
                     <label htmlFor="form-image">Image</label>
                     <input onChange={handleOnChange} type="file" accept="image/*" name='image' id='form-image' required/>
                 </div>
+
                 <div className="inputBox">
                     <label htmlFor="form-desc">Description</label>
                     <textarea onChange={handleOnChange} name="desc" id="form-desc" cols="30" rows="10" placeholder='Desc...'></textarea>
+                    <button className="btn btn-sm" onClick={onEditorOpen}>Open Editor</button>
                 </div>
                 <button type="submit" className='btn submit-btn'>Save</button>
             </form>
+
+            <div className="editor" id='editor'>
+                <Editor
+                    apiKey={process.env.REACT_APP_TINYMCE_API_KEY}
+                    onInit={(evt, editor) => editorRef.current = editor}
+                    init={{
+                        height: 500,
+                        plugins: [
+                            'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons'
+                        ],
+                        menubar: 'file edit view insert format tools table help',
+                        toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+                        toolbar_sticky: true,
+                        toolbar_mode: 'sliding',
+                        contextmenu: 'link image imagetools table',
+                        skin: 'oxide-dark',
+                        content_css: 'dark',
+                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+                        autosave_ask_before_unload: true,
+                        autosave_interval: '30s',
+                        autosave_prefix: '{path}{query}-{id}-',
+                        autosave_restore_when_empty: false,
+                        autosave_retention: '2m',
+                    }}
+                />
+                <button className='btn btn-sm' onClick={editorCopy}>Copy editor content to textarea</button>
+                <button className="btn btn-sm" onClick={onEditorClose}>Close</button>
+            </div>
         </section>
     )
 }
