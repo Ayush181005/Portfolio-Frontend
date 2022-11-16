@@ -69,7 +69,7 @@ export const Portfolio = (props) => {
                   else {
                     // If there is no slug, then don't render a link to the portfolio page
                     return (
-                      <Card key={i} text={portfolio.title} img_url={`data:image/png;base64,${base64String}`} />
+                      <Card key={i} text={portfolio.title} img_url={`data:image/png;base64,${base64String}`} showImg={true} />
                     )
                   }
                 }
