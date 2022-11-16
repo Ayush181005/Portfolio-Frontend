@@ -1,6 +1,6 @@
 {
-  "short_name": "Portfolio App",
-  "name": "Personal Portfolio App",
+  "short_name": "TheAyush",
+  "name": "TheAyush",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,9 +11,16 @@
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "maskable_icon_x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": ".",
   "display": "standalone",
   "theme_color": "#333",
   "background_color": "#ffffff"
