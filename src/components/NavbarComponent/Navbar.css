@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&Varela+Round&display=swap');
 
 .navbar {
     display: flex;
@@ -152,6 +152,20 @@
     }
 }
 
+.blog-link-container {
+    position: fixed;
+    top: 25%;
+    z-index: 1;
+    padding: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0, .2);
+    border-radius: 0 10px 10px 0;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    font-family: 'Varela Round', sans-serif;;
+}
 
 @media all and (max-width: 930px) {
     .nav-list{

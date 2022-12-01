@@ -3,6 +3,7 @@ import logo from '../../images/logo.jpg'
 import './Navbar.css'
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Navbar = (props) => {
   const { getUserData, userData } = props;
@@ -62,6 +63,12 @@ export const Navbar = (props) => {
           <div className="menu-line" id="menu-line-3"></div>
         </div>
       </nav>
+
+      <a href="https://blog.theayush.in" target="_blank" aria-label="TheAyush Blog">
+        <div className="blog-link-container">
+          <FontAwesomeIcon icon="fa-solid fa-blog" style={{color:"black"}}/>&nbsp;Blog
+        </div>
+      </a>
     </header>
   )
 }
