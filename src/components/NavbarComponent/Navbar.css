@@ -160,11 +160,18 @@
     font-size: 18px;
     text-decoration: none;
     color: #000;
-    box-shadow: 0 0 1rem 0 rgb(0, 0, 0, .2);
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0, .1);
     border-radius: 0 10px 10px 0;
     background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(5px);
-    font-family: 'Varela Round', sans-serif;;
+    font-family: 'Varela Round', sans-serif;
+    border: 1px solid transparent;
+}
+
+.blog-link-container:hover {
+    background-color: rgba(137, 226, 214, 0.15);
+    border: 1px solid rgb(137, 226, 214);
+    box-shadow: 0 0 1rem 0 rgb(137, 226, 214);
 }
 
 @media all and (max-width: 930px) {
