@@ -17,13 +17,25 @@ const apiCall = async (url, method, requestBody) => {
 const CertificateState = (props) => {
     const baseURL = process.env.REACT_APP_SERVER_BASE_URL;
     const [certificates, setCertificates] = useState([]); // Array of certificate objects
-    // const [certificate, setCertificate] = useState({}); // single certificate object
+    const [certPage, setCertPage] = useState(1); // Current page of certificates
+    const [numTotalCertificates, setNumTotalCertificates] = useState(0); // Total number of certificates
 
     // Get All Certificates
     const getCertificates = async () => {
         const url = `${baseURL}/api/certificates/getcertificates`;
         const jsonResponse = await apiCall(url, 'POST');
         setCertificates(jsonResponse);
+    }
+
+    // Get Some Certificates according to page number
+    const concatSomeCertificates = async (page=1, size=5) => {
+        const url = `${baseURL}/api/certificates/getsomecertificates?page=${page}&size=${size}`;
+        const jsonResponse = await apiCall(url, 'GET');
+        if (page === 1) {
+            setCertificates(jsonResponse);
+        } else {
+            setCertificates(certificates.concat(jsonResponse));
+        }
     }
 
     // Add Certificate
@@ -48,12 +60,24 @@ const CertificateState = (props) => {
         return { success: true };
     }
 
+    // get total number of certificates
+    const getNumTotalCertificates = async () => {
+        const url = `${baseURL}/api/certificates/getnumcertificates`;
+        const response = await apiCall(url, 'GET');
+        setNumTotalCertificates(response);
+    }
+
     return (
         <CertificateContext.Provider value={{
             certificates,
             getCertificates,
             addCertificate,
             deleteCertificate,
+            concatSomeCertificates,
+            certPage,
+            setCertPage,
+            getNumTotalCertificates,
+            numTotalCertificates
         }}>
             {props.children}
         </CertificateContext.Provider>

@@ -20,6 +20,10 @@
     vertical-align: middle;
 }
 
+.cert-spinner {
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
     .certificates-section {
         padding: 50px 20px;
