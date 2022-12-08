@@ -28,7 +28,7 @@ export const CertificateAdd = (props) => {
         const jsonResponse = await response.json();
         if (jsonResponse.success) {
             showAlert(`Added Certificate - ${data.compName}`, 'success');
-            navigate('/'); // Redirect to home page
+            navigate('/admin/certificates'); // Redirect to certificate admin page
         }
         else {
             let errorMsg = ""
