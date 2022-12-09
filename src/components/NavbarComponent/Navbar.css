@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
 
 .navbar {
     display: flex;
@@ -164,7 +164,7 @@
     border-radius: 0 10px 10px 0;
     background-color: rgba(255, 255, 255, .15);
     backdrop-filter: blur(5px);
-    font-family: 'Varela Round', sans-serif;
+    font-family: "Comic sans ms", sans-serif;
     border: 1px solid transparent;
 }
 
