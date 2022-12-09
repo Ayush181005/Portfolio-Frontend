@@ -25,9 +25,10 @@ export const PortfolioDetail = (props) => {
 
     return (
         <section className='portfolioDetailSection'>
-            {loading && <span className="portfolio-detail-spinner">
+            {loading && <div className="portfolio-detail-spinner">
                 <Spinner />
-            </span>}
+            </div>}
+
             { !loading && 
                 <>
                     <Helmet>

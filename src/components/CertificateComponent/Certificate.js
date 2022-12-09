@@ -64,7 +64,8 @@ export const Certificate = (props) => {
                     dataLength={certificates.length}
                     next={fetchMoreData}
                     hasMore={certificates.length !== totalCerts}
-                    loader={<span className='cert-spinner'><Spinner /></span>}
+                    loader={<div className='cert-spinner'><Spinner /></div>}
+                    style={{ overflow: 'hidden' }}
                 >
                     {certificates.length > 0 ? allCertificateYears.map((year, i) => {
                         return (
