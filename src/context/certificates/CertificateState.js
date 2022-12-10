@@ -19,6 +19,7 @@ const CertificateState = (props) => {
     const [certificates, setCertificates] = useState([]); // Array of certificate objects
     const [certPage, setCertPage] = useState(1); // Current page of certificates
     const [numTotalCertificates, setNumTotalCertificates] = useState(0); // Total number of certificates
+    const [allFields, setAllFields] = useState([]); // All the fields of certificates
 
     // Get All Certificates
     const getCertificates = async () => {
@@ -67,17 +68,27 @@ const CertificateState = (props) => {
         setNumTotalCertificates(response);
     }
 
+    // get all fields
+    const getAllFields = async () => {
+        const url = `${baseURL}/api/certificates/getfields`;
+        const response = await apiCall(url, 'GET');
+        setAllFields(response);
+    }
+
     return (
         <CertificateContext.Provider value={{
             certificates,
             getCertificates,
+            setCertificates,
             addCertificate,
             deleteCertificate,
             concatSomeCertificates,
             certPage,
             setCertPage,
             getNumTotalCertificates,
-            numTotalCertificates
+            numTotalCertificates,
+            getAllFields,
+            allFields
         }}>
             {props.children}
         </CertificateContext.Provider>

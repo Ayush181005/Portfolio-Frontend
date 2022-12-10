@@ -25,6 +25,20 @@
     margin-top: 20px;
 }
 
+.cert-field {
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: default;
+    transition: 500ms;
+}
+
+.cert-field:hover {
+    background-color: #f2f2f2;
+    border: 1px solid #afafaf;
+}
+
 @media screen and (max-width: 768px) {
     .certificates-section {
         padding: 50px 20px;

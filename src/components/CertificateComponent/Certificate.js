@@ -8,12 +8,13 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 export const Certificate = (props) => {
     const [loading, setLoading] = useState(true);
-    const { certificates, concatSomeCertificates, certPage, setCertPage, getNumTotalCertificates, numTotalCertificates } = useContext(CertificateContext);
+    const { certificates, concatSomeCertificates, certPage, setCertPage, getNumTotalCertificates, numTotalCertificates, getAllFields, allFields, setCertificates, getCertificates } = useContext(CertificateContext);
     const { setLoadingBarProgress } = props;
 
     useEffect(() => {
         setLoadingBarProgress(50);
         getNumTotalCertificates();
+        getAllFields();
         concatSomeCertificates(1, pageSize) // page, size
             .then(() => { setLoadingBarProgress(100); setLoading(false); });
     }, []); // Get certificates on mount
@@ -60,6 +61,13 @@ export const Certificate = (props) => {
             </Helmet>
             <div className="certificates-container">
                 <h1>Certificates</h1>
+                <div className="cert-fields">
+                    {allFields.map((field, i) => {
+                        return (
+                            <span key={i} className="cert-field">{field}</span>
+                        )
+                    })}
+                </div>
                 <InfiniteScroll
                     dataLength={certificates.length}
                     next={fetchMoreData}
