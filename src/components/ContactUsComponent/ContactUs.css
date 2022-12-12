@@ -68,13 +68,13 @@
 .contact-form-info-link,
 .about-link {
     text-decoration: none;
-    color: #333;
+    color: var(--body-link-color);
 }
 
 .contact-form-info-link:hover,
 .about-link:hover {
     text-decoration: underline;
-    color: #222;
+    color: var(--body-link-hover-color);
 }
 
 .contactForm {

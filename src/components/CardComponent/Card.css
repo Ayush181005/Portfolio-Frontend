@@ -1,3 +1,13 @@
+:root {
+    --card-text-color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --card-text-color: #ddd;
+    }
+}
+
 .card {
     width: 30%;
     text-align: center;
@@ -28,7 +38,7 @@ a .card {
 
 .card-text {
     margin: auto;
-    color: #000;
+    color: var(--card-text-color);
     font-size: 25px;
     font-weight: 400;
     text-decoration: none;

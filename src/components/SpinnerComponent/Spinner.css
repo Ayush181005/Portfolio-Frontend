@@ -7,6 +7,13 @@
     --spinner-inner-color: #757575;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root{
+        --spinner-outer-color: #fff;
+        --spinner-inner-color: #afafaf;
+    }
+}
+
 .spinner-container {
     position: relative;
     display: inline-block;

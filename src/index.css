@@ -1,3 +1,23 @@
+:root {
+  --body-bg-color: #fff;
+  --body-text-color: #333;
+  --body-link-color: #333;
+  --body-link-hover-color: #222;
+  --scrollbar-track-color: #fff;
+  --scrollbar-thumb-color: #333;
+  --scrollbar-thumb-hover-color: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --body-bg-color: #063b53;
+      --body-text-color: #fff;
+      --body-link-color: #ddd;
+      --body-link-hover-color: #fff;
+      --scrollbar-track-color: #063b53;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +29,8 @@
 
 body {
   overflow-x: hidden;
+  background-color: var(--body-bg-color);
+  color: var(--body-text-color);
 }
 
 code {
@@ -37,17 +59,17 @@ code {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: var(--scrollbar-track-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: var(--scrollbar-thumb-color);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #222;
+  background: var(--scrollbar-thumb-hover-color);
 }
 
 /* Button */

@@ -23,12 +23,12 @@
 }
 
 .about-section a {
-    color: #333;
+    color: var(--body-link-color);
     text-decoration: none;
 }
 
 .about-section a:hover {
-    color: #222;
+    color: var(--body-link-hover-color);
     text-decoration: underline;
 }
 

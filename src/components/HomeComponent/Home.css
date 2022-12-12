@@ -1,16 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Combo&family=Permanent+Marker&display=swap');
 
+:root {
+    --home-body-gradient-color1: transparent;
+    --home-body-gradient-color2: #ffd2d210;
+    --home-body-gradient-color3: #ffc3f53d;
+    --home-body-gradient-color4: transparent;
+    --home-content-color: #7e70fc0d;
+    --home-image-bubble-color1: #b9ebf81a;
+    --home-image-bubble-color2: #8efca61a;
+    --home-image-bubble-color3: #fc8eed0d;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --home-body-gradient-color1: #03142446;
+        --home-body-gradient-color2: transparent;
+        --home-body-gradient-color3: transparent;
+        --home-body-gradient-color4: transparent;
+        --home-content-color: transparent;
+        --home-image-bubble-color1: transparent;
+        --home-image-bubble-color2: transparent;
+        --home-image-bubble-color3: transparent;
+    }
+  }
+
 .intro-section {
     position: relative;
     padding: 10px 100px;
-    background: linear-gradient(transparent 5%, #ffd2d210, #ffc3f53d, transparent 98%);
+    background: linear-gradient(var(--home-body-gradient-color1) 5%, var(--home-body-gradient-color2), var(--home-body-gradient-color3), var(--home-body-gradient-color4) 98%);
 }
 
 .intro-container {
     width: 100%;
     width: 100%;
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     margin-top: 30px;
 }
 
@@ -18,7 +42,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(126, 112, 252, 0.05);
+    background-color: var(--home-content-color);
     padding: 30px;
     border-radius: 50% 46% 21% 46%;
 }
@@ -35,19 +59,21 @@
 
 /* Image background */
 .img-container {
-    background-color: rgba(185, 235, 248, 0.1);
+    background-color: var(--home-image-bubble-color1);
     border-radius: 40% 60% 35% 70%;
     height: fit-content;
     max-width: fit-content;
 }
+
 .img-container-2 {
-    background-color: rgba(142, 252, 166, 0.1);
+    background-color: var(--home-image-bubble-color2);
     border-radius: 70% 30% 55% 20%;
     width: 100%;
     height: 100%;
 }
+
 .img-container-3 {
-    background-color: rgba(252, 142, 237, 0.05);
+    background-color: var(--home-image-bubble-color3);
     border-radius: 45% 70% 80% 55%;
     height: 100%;
     padding: 50px;
@@ -61,13 +87,16 @@
     .intro-section {
         padding: 20px;
     }
+
     .intro-container {
         flex-direction: column;
         align-items: center;
     }
+
     .intro-section .content {
         background: none;
     }
+
     .img-container {
         margin-top: 40px;
     }

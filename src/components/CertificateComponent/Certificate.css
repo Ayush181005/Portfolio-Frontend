@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+:root {
+    --certificate-field-hover-bg-color: #f2f2f2;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --certificate-field-hover-bg-color: #a7a7a721;
+    }
+}
+
 .certificates-section {
     padding: 50px 100px;
     font-family: 'Open Sans', sans-serif;
@@ -32,10 +42,13 @@
     border-radius: 5px;
     cursor: default;
     transition: 500ms;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .cert-field:hover {
-    background-color: #f2f2f2;
+    background-color: var(--certificate-field-hover-bg-color);
     border: 1px solid #afafaf;
 }
 

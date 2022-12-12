@@ -1,13 +1,30 @@
+:root {
+    --close-button-color: #333;
+    --close-button-hover-color: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --close-button-color: #fff;
+        --close-button-hover-color: #aaa;
+    }
+}
+
 .image-viewer-container {
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.596);
+    background-color: rgba(0, 0, 0, 0.774);
     padding: 10px;
     border-radius: 5px;
     width: 100%;
     height: 100%;
+}
+
+.image-viewer-container:hover .body {
+    overflow: hidden !important;
+    background-color: red;
 }
 
 .image-viewer-container img {
@@ -15,17 +32,33 @@
     max-height: 80vh;
     display: block;
     margin: 20px auto 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.image-viewer-container .btn {
-    display: block;
-    margin-top: 5px;
-    margin: 5px auto;
+.image-viewer-container .close-icon {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    font-size: 50px;
+    cursor: pointer;
+    color: var(--close-button-color);
+}
+.image-viewer-container .close-icon:hover {
+    color: var(--close-button-hover-color);
 }
 
 @media screen and (max-width: 768px) {
     .image-viewer-container img {
         max-width: 95vw;
         max-height: 90vh;
+    }
+
+    .image-viewer-container .close-icon {
+        right: 20px;
+        top: 20px;
+        font-size: 30px;
     }
 }
