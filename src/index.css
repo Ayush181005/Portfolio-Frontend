@@ -6,6 +6,10 @@
   --scrollbar-track-color: #fff;
   --scrollbar-thumb-color: #333;
   --scrollbar-thumb-hover-color: #222;
+  --btn-bg-color: #ddd;
+  --btn-hover-bg-color: #333;
+  --btn-text-color: #000;
+  --btn-hover-text-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +19,10 @@
       --body-link-color: #ddd;
       --body-link-hover-color: #fff;
       --scrollbar-track-color: #063b53;
+      --btn-bg-color: #ddd;
+      --btn-hover-bg-color: #9c9c9c;
+      --btn-text-color: #000;
+      --btn-hover-text-color: #000;
   }
 }
 
@@ -74,7 +82,8 @@ code {
 
 /* Button */
 .btn {
-  background-color: #ddd;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
   border: none;
   outline: none;
   cursor: pointer;
@@ -83,8 +92,8 @@ code {
 }
 
 .btn:hover {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--btn-hover-bg-color);
+  color: var(--btn-hover-text-color);
 }
 
 .btn-sm {
