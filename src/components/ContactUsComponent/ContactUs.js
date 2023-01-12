@@ -47,7 +47,7 @@ export const ContactUs = (props) => {
   }
 
   const pageTitle = 'Contact Me - Ayush';
-  const pageDesc = 'Please give your valuable message using the contact me form!';
+  const pageDesc = "Get in touch with me today and let's connect. Whether you have a question, need help with something, or just want to say hello, I am here to listen and respond to you. My contact page is your gateway to communicate with me and I'm looking forward to hearing from you.";
 
   return (
     <section className="contact-section">
